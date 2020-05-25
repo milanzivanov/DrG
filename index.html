@@ -10,26 +10,63 @@
 <body>
     
     <main class="grid-container">
-        <div class="banner">
-            <h1>DrG</h1>
+
+        <div class="banner flex flex-jc-c flex-ai-c">
+            <h1 class="element"></h1>
         </div>
+
         <div class="products nav-item flex flex-jc-c flex-ai-c">
             <a href="#">
                 Proizvodi
             </a>
+
+            <div class="nav-item-conteiner">
+
+                <div class="nav-item-box">
+                    <a href="#">
+                        <svg class="svg__icon">
+                            <use xlink:href="/img/sprites.svg#icon-male"></use>
+                        </svg>
+                    </a>
+                </div>
+                <div class="nav-item-box">
+                    <a href="#">
+                        <svg class="svg__icon">
+                            <use xlink:href="/img/sprites.svg#icon-female"></use>
+                        </svg>
+                    </a>
+                </div>
+                <div class="nav-item-box">
+                    <a href="#">
+                        <svg class="svg__icon">
+                            <use xlink:href="/img/sprites.svg#icon-female"></use>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
         </div>
+
         <div class="about nav-item flex flex-jc-c flex-ai-c">
-            <a href="#">
-                O Nama
+            <a class="flex flex-jc-c flex-ai-c" href="#">
+                <svg class="svg__icon">
+                    <use xlink:href="/img/sprites.svg#icon-arrow-down-sign-to-navigate"></use>
+                </svg>
+                <span>O Nama</span>    
             </a>
         </div>
+
         <div class="contact nav-item flex flex-jc-c flex-ai-c">
-            <a href="#">
-                Kontakt
+            <a class="flex flex-jc-c flex-ai-c" href="#" href="#">
+                <svg class="svg__icon">
+                    <use xlink:href="/img/sprites.svg#icon-arrow-down-sign-to-navigate"></use>
+                </svg>
+                <span>Kontakt</spn>
             </a>
         </div>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <script src="app/js/main.js"></script>
 </body>
 </html>
