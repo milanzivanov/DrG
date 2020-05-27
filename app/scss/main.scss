@@ -20,8 +20,9 @@ main.grid-container {
         background: linear-gradient(262deg, #ff7854, #fd267d);
         background-color: indianred;
         
-        background: url("/img/https___blogs-images.forbes.com_davidhochman_files_2018_08_292102_179_41.jpg") no-repeat #fd267d center center;
-        background-size: contain;
+        // background: url("/img/adult-black-and-white-body-female-415314.jpg") no-repeat #fd267d center center;
+        background: url("/img/bw.jpg") no-repeat #fd267d center center;
+        background-size: cover;
         
         h1 {
             display: inline-block;
@@ -33,18 +34,18 @@ main.grid-container {
   
 .products { 
     grid-area: products;
-    // background: linear-gradient(-262deg, #ff7854, #fd267d);
-    background-color: lightseagreen;
+    // background: linear-gradient(262deg, #0c6dc7, #15638e);
+    background-color: #e64d58;
 }
 
 .about { 
     grid-area: about;
-    background-color: mediumseagreen;
+    background: linear-gradient(-262deg, #15638e, #0c6dc7);
 }
 
 .contact { 
     grid-area: contact;
-    background-color: cadetblue
+    background: linear-gradient(262deg, #0c6dc7, #15638e);
 }
 
 .nav-item {
@@ -62,15 +63,16 @@ main.grid-container {
     }
     
     .nav-item-conteiner {
+        display: flex;
         position: absolute;
         height: 100%;
         width: 100%;
-        background-color: springgreen;
+        background-color: #f2f2f2;
         justify-content: center;
         align-items: center;
                 
-        transition: 5s ease-in-out;
-        display: none;
+        transition: .3s ease-in-out;
+        opacity: 0;
         
         .nav-item-box {
             display: flex;
@@ -78,7 +80,8 @@ main.grid-container {
             align-items: center;
             flex: 1;
             
-            background-color: cyan;
+            // background: url("/img/bw.jpg") no-repeat center center;
+            background-color: #fff;
             height: calc(100% - 10px);
             margin: 5px;
             
@@ -89,11 +92,22 @@ main.grid-container {
             &:last-child {
                 margin-right: 5px;
             }
+
+            a {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: #000;
+                height: 100%;
+                width: 100%;
+                background-color: powderblue;
+            }
         }
     }
     
     &:hover > .nav-item-conteiner {
-        display: flex;
+        opacity: 1;
     }
 }
 
