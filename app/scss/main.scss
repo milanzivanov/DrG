@@ -5,8 +5,10 @@ main.grid-container {
     height: 100vh;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 
+        1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 
+        1fr 1fr 1fr 1fr;
     grid-template-areas: 
         "banner banner banner banner banner banner" 
         "banner banner banner banner banner banner" 
@@ -17,43 +19,63 @@ main.grid-container {
     
     .banner { 
         grid-area: banner;
-        background: linear-gradient(262deg, #ff7854, #fd267d);
-        background-color: indianred;
+        // background: linear-gradient(262deg, #ff7854, #fd267d);
+        // background-color: #fd267d;
         
-        // background: url("/img/adult-black-and-white-body-female-415314.jpg") no-repeat #fd267d center center;
-        background: url("/img/bw.jpg") no-repeat #fd267d center center;
-        background-size: cover;
+        // background-image: url("/img/bg-drg.png");
+        background-color: #222;
+        background: url("/img/adult-black-and-white-body-female-415314.jpg");
+        
+        background-position: center;
+        background-size: 100% 100%;
+        // background-size: cover;
+        
+        ;
         
         h1 {
-            display: inline-block;
-            background-color: #f5f5f5;
-            font-size: 5em;
+            display: flex;
+            background-color: #202020;
             margin: 0;
+            color: #003f88;
+            padding: 5px;
+
+            img {
+                height: 100px;
+            }
         }
 }
   
 .products { 
     grid-area: products;
-    // background: linear-gradient(262deg, #0c6dc7, #15638e);
-    background-color: #e64d58;
+    margin: 5px 0 5px 0;
+    // background: linear-gradient(262deg, #ff7854, #fd267d);
+    background-color: #fd267d;
 }
 
 .about { 
     grid-area: about;
-    background: linear-gradient(-262deg, #15638e, #0c6dc7);
+    // background: linear-gradient(262deg, #ff7854, #fd267d);
+    background-color: #fd267d;
+
+    margin: 5px 0 5px 5px;
 }
 
 .contact { 
     grid-area: contact;
-    background: linear-gradient(262deg, #0c6dc7, #15638e);
+    // background: linear-gradient(262deg, #ff7854, #fd267d);
+    background-color: #fd267d;
+
+    margin: 5px 0 5px 5px;
 }
 
 .nav-item {
     position: relative;
     transition: 0.3s ease-out;
+
     a {
         font-size: 1.5em;
         color: #202020;
+        // color: #003f88;
         font-weight: 700;
         text-transform: uppercase;
         
@@ -71,7 +93,7 @@ main.grid-container {
         justify-content: center;
         align-items: center;
                 
-        transition: .3s ease-in-out;
+        transition: all 0.3s ease;
         opacity: 0;
         
         .nav-item-box {
@@ -80,7 +102,6 @@ main.grid-container {
             align-items: center;
             flex: 1;
             
-            // background: url("/img/bw.jpg") no-repeat center center;
             background-color: #fff;
             height: calc(100% - 10px);
             margin: 5px;
@@ -99,15 +120,46 @@ main.grid-container {
                 justify-content: center;
                 align-items: center;
                 color: #000;
-                height: 100%;
-                width: 100%;
-                background-color: powderblue;
+                color: #003f88;
+                border-radius: 50%;
+                height: 100px;
+                width: 100px;
+
+                span {
+                    padding: 0;
+                }
             }
         }
     }
-    
+
+
     &:hover > .nav-item-conteiner {
         opacity: 1;
+
+        .nav-item-box:hover a {
+            background: linear-gradient(262deg, #ff7854, #fd267d);
+
+            svg, span {
+                color: #fff;
+                fill: #fff;
+            }
+
+        }
+    }
+    
+}
+
+.nav-item:hover {
+    cursor: pointer;
+    background: linear-gradient(262deg, #0c6dc7, #15638e);
+  
+    a {
+        color: #fff;
     }
 }
+
+// .nav-item:first-child:hover {
+//     cursor: pointer;
+//     background: yellowgreen;
+// }
 
