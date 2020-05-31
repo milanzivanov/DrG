@@ -22,15 +22,15 @@ main.grid-container {
         // background: linear-gradient(262deg, #ff7854, #fd267d);
         // background-color: #fd267d;
         
-        // background-image: url("/img/bg-drg.png");
-        background-color: #222;
-        background: url("/img/adult-black-and-white-body-female-415314.jpg");
+        background-image: url("/img/bg-drg.png");
+        background-color: #e8e8e6;
+        // background: url("/img/adult-black-and-white-body-female-415314.jpg");
         
         background-position: center;
         background-size: 100% 100%;
         // background-size: cover;
-        
-        ;
+
+        flex-direction: column;
         
         h1 {
             display: flex;
@@ -42,6 +42,16 @@ main.grid-container {
             img {
                 height: 100px;
             }
+        }
+
+        h2 {
+            background-color: #222;
+            letter-spacing: 1px;
+            color: #fff;
+            padding: 5px 11px 5px 11px;
+            margin: 0;
+            font-weight: bolder;
+            text-transform: uppercase;
         }
 }
   

@@ -2,6 +2,7 @@ html {
   font-size: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 0;
 }
 
 *, *::before, *::after {
@@ -73,10 +74,14 @@ main.grid-container {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
   grid-area: banner;
-  background-color: #222;
-  background: url("/img/adult-black-and-white-body-female-415314.jpg");
+  background-image: url("/img/bg-drg.png");
+  background-color: #e8e8e6;
   background-position: center;
   background-size: 100% 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .banner h1 {
@@ -91,6 +96,16 @@ main.grid-container {
 
 .banner h1 img {
   height: 100px;
+}
+
+.banner h2 {
+  background-color: #222;
+  letter-spacing: 1px;
+  color: #fff;
+  padding: 5px 11px 5px 11px;
+  margin: 0;
+  font-weight: bolder;
+  text-transform: uppercase;
 }
 
 .products {
