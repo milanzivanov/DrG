@@ -1,5 +1,6 @@
 @import "global";
 @import "variables";
+@import "mixins";
 
 main.grid-container {
     height: 100vh;
@@ -15,44 +16,103 @@ main.grid-container {
         "banner banner banner banner banner banner" 
         "products products about about contact contact";
 
+    @include breakpoint(tablet) {
+        grid-template-areas: 
+            "banner banner banner banner banner banner" 
+            "banner banner banner banner banner banner" 
+            "products products products about about about" 
+            "contact contact contact contact contact contact";
     }
+
+    @include breakpoint(mobile) {
+        grid-template-columns: 
+            1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 
+            1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "banner banner banner banner banner banner" 
+            "banner banner banner banner banner banner" 
+            "products products products products products products" 
+            "about about about about about about" 
+            "contact contact contact contact contact contact";
+    }
+}
     
-    .banner { 
-        grid-area: banner;
-        // background: linear-gradient(262deg, #ff7854, #fd267d);
-        // background-color: #fd267d;
-        
-        background-image: url("/img/bg-drg.png");
-        background-color: #e8e8e6;
-        // background: url("/img/adult-black-and-white-body-female-415314.jpg");
-        
-        background-position: center;
-        background-size: 100% 100%;
-        // background-size: cover;
+.banner {
+    position: relative;
+    grid-area: banner;
+    // background: linear-gradient(262deg, #ff7854, #fd267d);
+    // background-color: #fd267d;
+    
+    background-image: 
+        url("/img/bg-drg.png");
+    background-color: #e8e8e6;
+    // background: url("/img/adult-black-and-white-body-female-415314.jpg");
+    // background: url("/img/bw.jpg");
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
 
-        flex-direction: column;
-        
-        h1 {
-            display: flex;
-            background-color: #202020;
-            margin: 0;
-            color: #003f88;
-            padding: 5px;
+    flex-direction: column;
+    
+    h1 {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        background-color: #202020;
+        margin: 0;
+        color: #003f88;
+        padding: 5px;
+        transition: all 0,3s ease-in-out;
 
-            img {
-                height: 100px;
+        img {
+            height: 100px;
+            width: 210px;
+
+            @include breakpoint(tablet) {
+                height: 75px;
+                width: 160px;
+            }
+
+            @include breakpoint(mobile) {
+                height: 50px;
+                width: 110px;
             }
         }
+    }
 
-        h2 {
-            background-color: #222;
-            letter-spacing: 1px;
-            color: #fff;
-            padding: 5px 11px 5px 11px;
-            margin: 0;
-            font-weight: bolder;
-            text-transform: uppercase;
+    h2 {
+        position: relative;
+        z-index: 3;
+        background-color: #222;
+        letter-spacing: 1px;
+        color: #fff;
+        padding: 5px 7px 5px 7px;
+        margin: 0;
+        font-weight: bolder;
+        text-transform: uppercase;
+        font-size: 1.6875rem; // 27px
+
+        @include breakpoint(tablet) {
+            font-size: 1em
         }
+
+        @include breakpoint(mobile) {
+            font-size: .5em
+        }
+    }
+
+    &::after {
+        content: "";
+        background-color: rgba(12, 12, 12, 0.2);
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
 }
   
 .products { 
@@ -64,7 +124,6 @@ main.grid-container {
 
 .about { 
     grid-area: about;
-    // background: linear-gradient(262deg, #ff7854, #fd267d);
     background-color: #fd267d;
 
     margin: 5px 0 5px 5px;
@@ -72,7 +131,6 @@ main.grid-container {
 
 .contact { 
     grid-area: contact;
-    // background: linear-gradient(262deg, #ff7854, #fd267d);
     background-color: #fd267d;
 
     margin: 5px 0 5px 5px;
@@ -85,7 +143,6 @@ main.grid-container {
     a {
         font-size: 1.5em;
         color: #202020;
-        // color: #003f88;
         font-weight: 700;
         text-transform: uppercase;
         
@@ -126,7 +183,6 @@ main.grid-container {
 
             a {
                 display: flex;
-                flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 color: #000;
@@ -136,6 +192,8 @@ main.grid-container {
                 width: 100px;
 
                 span {
+                    text-align: center;
+                    font-size: 1rem;
                     padding: 0;
                 }
             }
@@ -168,8 +226,48 @@ main.grid-container {
     }
 }
 
-// .nav-item:first-child:hover {
-//     cursor: pointer;
-//     background: yellowgreen;
-// }
+// sectinos
+.products-wrapper {
+    background-color: #0c6dc7;
+}
+.obout-contact-wrapper {
+
+    .about-contact-item {
+        // flex: 1 1 calc(49% - 20px);
+        flex: 1 1 50%;
+        // margin: 5px;
+        flex-wrap: wrap;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 100%;
+
+        &:nth-child(1) {
+            background-color: #ff7854;
+        }
+
+        &:nth-child(2) {
+            background-color: #15638e;
+        }
+    }
+}
+
+.section-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer.footer-wrapper {
+    background-color: indigo;
+    p {
+        margin: 0;
+        padding: 10px 0;
+        color: ivory;
+    }
+}
 
