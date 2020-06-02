@@ -17,7 +17,12 @@ main.grid-container {
         "products products about about contact contact";
 
     @include breakpoint(tablet) {
+        grid-template-columns: 
+            1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 
+            1fr 1fr 1fr 1fr 1fr;
         grid-template-areas: 
+            "banner banner banner banner banner banner" 
             "banner banner banner banner banner banner" 
             "banner banner banner banner banner banner" 
             "products products products about about about" 
@@ -41,78 +46,77 @@ main.grid-container {
 .banner {
     position: relative;
     grid-area: banner;
-    // background: linear-gradient(262deg, #ff7854, #fd267d);
-    // background-color: #fd267d;
     
-    background-image: 
-        url("/img/bg-drg.png");
-    background-color: #e8e8e6;
-    // background: url("/img/adult-black-and-white-body-female-415314.jpg");
-    // background: url("/img/bw.jpg");
+    background: url("/img/singerica-webp.jpg");
+    background: url("/img/singerica.jpg");
     
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
 
-    flex-direction: column;
+    position: relative;
     
-    h1 {
-        position: relative;
-        z-index: 3;
-        display: flex;
+    .banner-box {
+        flex-direction: column;
         background-color: #202020;
-        margin: 0;
-        color: #003f88;
-        padding: 5px;
-        transition: all 0,3s ease-in-out;
-
-        img {
-            height: 100px;
-            width: 210px;
-
-            @include breakpoint(tablet) {
-                height: 75px;
-                width: 160px;
-            }
-
-            @include breakpoint(mobile) {
-                height: 50px;
-                width: 110px;
-            }
-        }
-    }
-
-    h2 {
-        position: relative;
         z-index: 3;
-        background-color: #222;
-        letter-spacing: 1px;
-        color: #fff;
-        padding: 5px 7px 5px 7px;
-        margin: 0;
-        font-weight: bolder;
-        text-transform: uppercase;
-        font-size: 1.6875rem; // 27px
+        padding: 5px;
+        
+        h1 {
+            margin: 0;
+            transition: all 0.3s ease-in-out;
 
-        @include breakpoint(tablet) {
-            font-size: 1em
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            img {
+                height: 100px;
+                width: 210px;
+    
+                @include breakpoint(tablet) {
+                    height: 75px;
+                    width: 160px;
+                }
+    
+                @include breakpoint(mobile) {
+                    height: 50px;
+                    width: 110px;
+                }
+            }
         }
-
-        @include breakpoint(mobile) {
-            font-size: .5em
+    
+        h2.element {
+            position: relative;
+            z-index: 3;
+            letter-spacing: 1px;
+            color: #fff;
+            margin: 0;
+            font-weight: bolder;
+            text-transform: uppercase;
+            font-size: 1.5em;
+    
+            @include breakpoint(tablet) {
+                font-size: 1.3em
+            }
+    
+            @include breakpoint(mobile) {
+                font-size: 1em
+            }
+        }
+    
+        &::after {
+            content: "";
+            background-color: rgba(12, 12, 12, 0.2);
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
     }
-
-    &::after {
-        content: "";
-        background-color: rgba(12, 12, 12, 0.2);
-        position: absolute;
-        z-index: 2;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
+    
 }
   
 .products { 
@@ -120,6 +124,15 @@ main.grid-container {
     margin: 5px 0 5px 0;
     // background: linear-gradient(262deg, #ff7854, #fd267d);
     background-color: #fd267d;
+    
+    @include breakpoint(tablet) {
+        margin: 5px 0 0 5px;
+    }
+    @include breakpoint(mobile) {
+        margin: 5px 5px 0 5px;
+    }
+
+    
 }
 
 .about { 
@@ -127,13 +140,29 @@ main.grid-container {
     background-color: #fd267d;
 
     margin: 5px 0 5px 5px;
+
+    @include breakpoint(tablet) {
+        margin: 5px 5px 0 5px;
+    }
+
+    @include breakpoint(mobile) {
+        margin: 5px 5px 0 5px;
+    }
 }
 
 .contact { 
     grid-area: contact;
     background-color: #fd267d;
-
     margin: 5px 0 5px 5px;
+
+    @include breakpoint(tablet) {
+        margin: 5px;
+    }
+    @include breakpoint(mobile) {
+        margin: 5px;
+    }
+
+
 }
 
 .nav-item {
@@ -145,6 +174,14 @@ main.grid-container {
         color: #202020;
         font-weight: 700;
         text-transform: uppercase;
+
+        @include breakpoint(tablet) {
+            font-size: 1.3em;
+        }
+    
+        @include breakpoint(mobile) {
+            font-size: 1em;
+        }
         
         span {
             padding-left: 10px;

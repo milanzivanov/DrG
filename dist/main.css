@@ -32,6 +32,10 @@ a, a:visited, a:hover {
   fill: currentColor;
 }
 
+.typed-cursor {
+  display: none;
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -72,7 +76,11 @@ main.grid-container {
 
 @media only screen and (min-width: 768px) and (max-width: 1399px) {
   main.grid-container {
-        grid-template-areas: "banner banner banner banner banner banner"  "banner banner banner banner banner banner"  "products products products about about about"  "contact contact contact contact contact contact";
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "banner banner banner banner banner banner"  "banner banner banner banner banner banner"  "banner banner banner banner banner banner"  "products products products about about about"  "contact contact contact contact contact contact";
   }
 }
 
@@ -93,76 +101,82 @@ main.grid-container {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
   grid-area: banner;
-  background-image: url("/img/bg-drg.png");
-  background-color: #e8e8e6;
+  background: url("/img/singerica-webp.jpg");
+  background: url("/img/singerica.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
+  position: relative;
+}
+
+.banner .banner-box {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: #202020;
+  z-index: 3;
+  padding: 5px;
 }
 
-.banner h1 {
-  position: relative;
-  z-index: 3;
+.banner .banner-box h1 {
+  margin: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #202020;
-  margin: 0;
-  color: #003f88;
-  padding: 5px;
-  -webkit-transition: all 0,3s ease-in-out;
-  transition: all 0,3s ease-in-out;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.banner h1 img {
+.banner .banner-box h1 img {
   height: 100px;
   width: 210px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1399px) {
-  .banner h1 img {
+  .banner .banner-box h1 img {
     height: 75px;
     width: 160px;
   }
 }
 
 @media only screen and (min-width: 120px) and (max-width: 767px) {
-  .banner h1 img {
+  .banner .banner-box h1 img {
     height: 50px;
     width: 110px;
   }
 }
 
-.banner h2 {
+.banner .banner-box h2.element {
   position: relative;
   z-index: 3;
-  background-color: #222;
   letter-spacing: 1px;
   color: #fff;
-  padding: 5px 7px 5px 7px;
   margin: 0;
   font-weight: bolder;
   text-transform: uppercase;
-  font-size: 1.6875rem;
+  font-size: 1.5em;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1399px) {
-  .banner h2 {
-    font-size: 1em;
+  .banner .banner-box h2.element {
+    font-size: 1.3em;
   }
 }
 
 @media only screen and (min-width: 120px) and (max-width: 767px) {
-  .banner h2 {
-    font-size: .5em;
+  .banner .banner-box h2.element {
+    font-size: 1em;
   }
 }
 
-.banner::after {
+.banner .banner-box::after {
   content: "";
   background-color: rgba(12, 12, 12, 0.2);
   position: absolute;
@@ -182,6 +196,18 @@ main.grid-container {
   background-color: #fd267d;
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1399px) {
+  .products {
+    margin: 5px 0 0 5px;
+  }
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .products {
+    margin: 5px 5px 0 5px;
+  }
+}
+
 .about {
   -ms-grid-row: 4;
   -ms-grid-column: 3;
@@ -191,6 +217,18 @@ main.grid-container {
   margin: 5px 0 5px 5px;
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1399px) {
+  .about {
+    margin: 5px 5px 0 5px;
+  }
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .about {
+    margin: 5px 5px 0 5px;
+  }
+}
+
 .contact {
   -ms-grid-row: 4;
   -ms-grid-column: 5;
@@ -198,6 +236,18 @@ main.grid-container {
   grid-area: contact;
   background-color: #fd267d;
   margin: 5px 0 5px 5px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1399px) {
+  .contact {
+    margin: 5px;
+  }
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .contact {
+    margin: 5px;
+  }
 }
 
 .nav-item {
@@ -211,6 +261,18 @@ main.grid-container {
   color: #202020;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1399px) {
+  .nav-item a {
+    font-size: 1.3em;
+  }
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .nav-item a {
+    font-size: 1em;
+  }
 }
 
 .nav-item a span {
