@@ -47,8 +47,9 @@ main.grid-container {
     position: relative;
     grid-area: banner;
     
-    background: url("/img/singerica-webp.jpg");
-    background: url("/img/singerica.jpg");
+    // background-image: url("/img/bg-drg-webp.webp");
+    background-image: url("/img/singerica.jpg");
+    background-image: url("/img/singerica-webp.webp");
     
     background-repeat: no-repeat;
     background-position: center;
@@ -60,7 +61,7 @@ main.grid-container {
         flex-direction: column;
         background-color: #202020;
         z-index: 3;
-        padding: 5px;
+        padding: 5px 5px 0 5px;
         
         h1 {
             margin: 0;
@@ -124,7 +125,10 @@ main.grid-container {
 .products { 
     grid-area: products;
     margin: 5px 0 5px 0;
+
     background-color: #fd267d;
+    // background-color: #d5d5d5;
+
     
     @include breakpoint(tablet) {
         margin: 5px 0 0 5px;
@@ -139,6 +143,7 @@ main.grid-container {
 .about { 
     grid-area: about;
     background-color: #fd267d;
+    // background-color: #d5d5d5;
 
     margin: 5px 0 5px 5px;
 
@@ -163,6 +168,8 @@ main.grid-container {
 .contact { 
     grid-area: contact;
     background-color: #fd267d;
+    // background-color: #d5d5d5;
+
     margin: 5px 0 5px 5px;
 
     @include breakpoint(tablet) {
@@ -275,7 +282,7 @@ main.grid-container {
 
 // sections
 .products-wrapper {
-    background-color: #0c6dc7;
+    background-color: #fff;
 }
 
 .section-container {
@@ -286,8 +293,15 @@ main.grid-container {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        background-color: #f5f5f5;
         h2 {
+            // color: #0c6dc7;
+            color: #fd267d;
+            text-transform: uppercase;
+            font-size: 1.5em;
             text-align: center;
+            padding: 30px 0;
         }
     }
 
@@ -300,17 +314,18 @@ main.grid-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 100px 0;
             margin: 5px 5px 0 0;
-            background-color: lawngreen;
+
+            background-color: #f5f5f5;
 
             &:nth-child(4n + 1) {
                 margin-left: 5px;
             }
 
             img {
-                height: 500px;
-                width: 500px;
+                // ******** fixing
+                height: 600px;
+                width: 100%;
             }
         }
 
@@ -343,6 +358,7 @@ main.grid-container {
 
 footer.footer-wrapper {
     background-color: indigo;
+    padding: 50px 0;
     p {
         margin: 0;
         padding: 10px 0;
