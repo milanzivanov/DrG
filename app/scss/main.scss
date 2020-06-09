@@ -42,12 +42,32 @@ main.grid-container {
             "contact contact contact contact contact contact";
     }
 }
+
+// btt
+.back-to-top {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    // background-color: #fd267d;
+    background-image: linear-gradient(to bottom,#33A09E,#227CB3);
+    display: none;
+    padding: 10px;
+
+    span {
+        color: #f5f5f5;
+        text-transform: uppercase;
+    }
+}
+
+.back-to-top.show {
+    cursor: pointer;
+    display: flex;
+}
     
 .banner {
     position: relative;
     grid-area: banner;
     
-    // background-image: url("/img/bg-drg-webp.webp");
     background-image: url("/img/singerica.jpg");
     background-image: url("/img/singerica-webp.webp");
     
@@ -137,7 +157,6 @@ main.grid-container {
         margin: 5px 5px 0 5px;
     }
 
-    
 }
 
 .about { 
@@ -216,6 +235,32 @@ main.grid-container {
                 
         transition: all 0.3s ease;
         opacity: 0;
+
+        ///////////
+        @include breakpoint(tablet) {
+            opacity: 1;
+
+            .nav-item-box a {
+                background: linear-gradient(262deg, #ff7854, #fd267d);
+    
+                svg, span {
+                    color: #fff;
+                    fill: #fff;
+                }
+            }
+        }
+        @include breakpoint(mobile) {
+            opacity: 1;
+
+            .nav-item-box a {
+                background: linear-gradient(262deg, #ff7854, #fd267d);
+    
+                svg, span {
+                    color: #fff;
+                    fill: #fff;
+                }
+            }
+        }
         
         .nav-item-box {
             display: flex;
@@ -296,7 +341,6 @@ main.grid-container {
 
         background-color: #f5f5f5;
         h2 {
-            // color: #0c6dc7;
             color: #fd267d;
             text-transform: uppercase;
             font-size: 1.5em;
@@ -315,8 +359,14 @@ main.grid-container {
             justify-content: center;
             align-items: center;
             margin: 5px 5px 0 0;
-
             background-color: #f5f5f5;
+
+            @include breakpoint(tablet) {
+                flex: 1 1 calc(50% - 20px);
+            }
+            @include breakpoint(mobile) {
+                flex: 1 1 calc(100% - 20px);
+            }
 
             &:nth-child(4n + 1) {
                 margin-left: 5px;
@@ -324,14 +374,21 @@ main.grid-container {
 
             img {
                 // ******** fixing
-                height: 600px;
+                height: 500px;
                 width: 100%;
+
+                @include breakpoint(tablet) {
+                    height: auto;
+                }
+                @include breakpoint(mobile) {
+                    height: auto;
+                }
+                height: auto;
             }
         }
 
     }
 }
-
 
 .about-contact-wrapper {
     width: 100%;
@@ -341,28 +398,88 @@ main.grid-container {
     .about-contact-item {
         flex: 1 1 50%;
 
+        @include breakpoint(mobile) {
+            flex: 1 1 100%;
+        }
+
         display: flex;
         justify-content: center;
         align-items: center;
 
         &:nth-child(1) {
-            background-color: #ff7854;
+            background: url(/img/drg-logo-2020.svg) #2786ac no-repeat center center;
+            padding: 20px;
+            .about-text {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                padding: 20px;
+                background-color: #f5f5f5;
+
+                h3 {
+                    color: #0c6dc7;
+                }
+
+                p {
+                    color: #222;
+                }
+            }
         }
 
         &:nth-child(2) {
-            background-color: #15638e;
+            background-image: linear-gradient(to bottom,#33A09E,#227CB3);
+
+            a {
+                color: #f5f5f5;
+                font-size: 40px;
+                &:hover span {
+                    color: yellow;
+                }
+            }
+
         }
     }
 }
 
 
 footer.footer-wrapper {
-    background-color: indigo;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse;
+    background-color: #f5f5f5;
     padding: 50px 0;
-    p {
-        margin: 0;
-        padding: 10px 0;
-        color: ivory;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    small {
+        @include breakpoint(mobile) {
+            margin-bottom: 10px;
+        }
+        span {
+            margin: 0;
+            padding: 10px 0;
+            color: #222;
+        }
+    }
+    a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 100px;
+        }
+        span {
+            font-weight: bold;
+            font-size: 15px;
+            text-transform: uppercase;
+            color: #15638e;
+        }
     }
 }
 

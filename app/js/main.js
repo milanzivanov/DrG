@@ -4,17 +4,44 @@ var typed = new Typed('.element', {
     typeSpeed: 100
 });
 
-// scroll to section
-$('a[href^="#"]').bind('click', function(e) {
-    e.preventDefault(); 
+$(document).ready(function() {
+    'use strict';
 
-    var target = $(this).attr("href");
-
-    $('html, body').stop().animate({
-        scrollTop: $(target).offset().top
-    }, 700, function() {
-        location.hash = target; 
+    // scroll to section
+    $('a[href^="#"]').bind('click', function(e) {
+        e.preventDefault(); 
+    
+        var target = $(this).attr("href");
+    
+        $('html, body').stop().animate({
+            scrollTop: $(target).offset().top
+        }, 700, function() {
+            location.hash = target; 
+        });
+    
+        return false;
     });
-
-    return false;
+    
+    // btt
+    if ($('.back-to-top').length) {
+        let scrollTrigger = 100, // px
+        backToTop = function () {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > scrollTrigger) {
+                $('.back-to-top').addClass('show');
+            } else {
+                $('.back-to-top').removeClass('show');
+            }
+        };
+        backToTop();
+        $(window).on('scroll', function () {
+            backToTop();
+        });
+        $('.back-to-top').on('click', function (e) {
+            e.preventDefault();
+            $('html,body').animate({
+                scrollTop: 0
+            }, 500);
+        });
+    }
 });
