@@ -68,18 +68,24 @@ main.grid-container {
     position: relative;
     grid-area: banner;
     
-    background-image: url("/img/singerica.jpg");
-    background-image: url("/img/singerica-webp.webp");
+    // background-image: url("/img/singerica.jpg");
+    // background-image: url("/img/singerica-webp.webp");
+    // background-repeat: no-repeat;
+    // background-position: center;
+
+    // background: url("/img/drg-logo-2020.svg") #222 no-repeat 100% 100%;
+    // background: url("/img/drg-logo-2020-grey-optimised.svg") #222 no-repeat 100% 100%;
+    background: url("/img/drg-logo-2020-pink-optimised.svg") #222 no-repeat;
     
-    background-repeat: no-repeat;
-    background-position: center;
     background-size: 100% 100%;
+
+    // #0c6dc7, #15638e
 
     position: relative;
     
     .banner-box {
         flex-direction: column;
-        background-color: #202020;
+        background-color: #f5f5f5;
         z-index: 3;
         padding: 5px 5px 0 5px;
         
@@ -111,7 +117,7 @@ main.grid-container {
             position: relative;
             z-index: 3;
             letter-spacing: 1px;
-            color: #fff;
+            color: #1267a3;
             margin: 0;
             font-weight: bolder;
             text-transform: uppercase;
@@ -147,8 +153,8 @@ main.grid-container {
     margin: 5px 0 5px 0;
 
     background-color: #fd267d;
+    background-color: #0c6dc7;
     // background-color: #d5d5d5;
-
     
     @include breakpoint(tablet) {
         margin: 5px 0 0 5px;
@@ -162,6 +168,7 @@ main.grid-container {
 .about { 
     grid-area: about;
     background-color: #fd267d;
+    background-color: #0c6dc7;
     // background-color: #d5d5d5;
 
     margin: 5px 0 5px 5px;
@@ -187,6 +194,7 @@ main.grid-container {
 .contact { 
     grid-area: contact;
     background-color: #fd267d;
+    background-color: #0c6dc7;
     // background-color: #d5d5d5;
 
     margin: 5px 0 5px 5px;
@@ -284,7 +292,6 @@ main.grid-container {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                color: #000;
                 color: #003f88;
                 border-radius: 50%;
                 height: 100px;
@@ -395,6 +402,9 @@ main.grid-container {
     height: 100vh;
     display: flex;
     flex-wrap: wrap;
+
+    // background: url(/img/drg-logo-2020.svg) no-repeat center center;
+
     .about-contact-item {
         flex: 1 1 50%;
 
@@ -407,17 +417,21 @@ main.grid-container {
         align-items: center;
 
         &:nth-child(1) {
-            background: url(/img/drg-logo-2020.svg) #2786ac no-repeat center center;
+            // background-image: linear-gradient(to bottom,#33A09E,#227CB3);
+            background: url(/img/drg-logo-2020-grey-optimised.svg) #2786ac no-repeat center center;
             padding: 20px;
             .about-text {
+                // background: url(/img/drg-logo-2020-grey-optimised.svg) #2786ac no-repeat center center;
+
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: center;
                 padding: 20px;
-                background-color: #f5f5f5;
+                background-color: rgba(245, 245, 245, 0.8);
 
                 h3 {
+                    font-size: 35px;
                     color: #0c6dc7;
                 }
 
@@ -433,6 +447,11 @@ main.grid-container {
             a {
                 color: #f5f5f5;
                 font-size: 40px;
+
+                @include breakpoint(mobile) {
+                    font-size: 25px;
+                }
+
                 &:hover span {
                     color: yellow;
                 }

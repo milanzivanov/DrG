@@ -127,10 +127,7 @@ main.grid-container {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
   grid-area: banner;
-  background-image: url("/img/singerica.jpg");
-  background-image: url("/img/singerica-webp.webp");
-  background-repeat: no-repeat;
-  background-position: center;
+  background: url("/img/drg-logo-2020-pink-optimised.svg") #222 no-repeat;
   background-size: 100% 100%;
   position: relative;
 }
@@ -140,7 +137,7 @@ main.grid-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #202020;
+  background-color: #f5f5f5;
   z-index: 3;
   padding: 5px 5px 0 5px;
 }
@@ -183,7 +180,7 @@ main.grid-container {
   position: relative;
   z-index: 3;
   letter-spacing: 1px;
-  color: #fff;
+  color: #1267a3;
   margin: 0;
   font-weight: bolder;
   text-transform: uppercase;
@@ -222,6 +219,7 @@ main.grid-container {
   grid-area: products;
   margin: 5px 0 5px 0;
   background-color: #fd267d;
+  background-color: #0c6dc7;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1399px) {
@@ -242,6 +240,7 @@ main.grid-container {
   -ms-grid-column-span: 2;
   grid-area: about;
   background-color: #fd267d;
+  background-color: #0c6dc7;
   margin: 5px 0 5px 5px;
 }
 
@@ -269,6 +268,7 @@ main.grid-container {
   -ms-grid-column-span: 2;
   grid-area: contact;
   background-color: #fd267d;
+  background-color: #0c6dc7;
   margin: 5px 0 5px 5px;
 }
 
@@ -394,7 +394,6 @@ main.grid-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #000;
   color: #003f88;
   border-radius: 50%;
   height: 100px;
@@ -562,7 +561,7 @@ main.grid-container {
 }
 
 .about-contact-wrapper .about-contact-item:nth-child(1) {
-  background: url(/img/drg-logo-2020.svg) #2786ac no-repeat center center;
+  background: url(/img/drg-logo-2020-grey-optimised.svg) #2786ac no-repeat center center;
   padding: 20px;
 }
 
@@ -581,10 +580,11 @@ main.grid-container {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: rgba(245, 245, 245, 0.8);
 }
 
 .about-contact-wrapper .about-contact-item:nth-child(1) .about-text h3 {
+  font-size: 35px;
   color: #0c6dc7;
 }
 
@@ -600,6 +600,12 @@ main.grid-container {
 .about-contact-wrapper .about-contact-item:nth-child(2) a {
   color: #f5f5f5;
   font-size: 40px;
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .about-contact-wrapper .about-contact-item:nth-child(2) a {
+    font-size: 25px;
+  }
 }
 
 .about-contact-wrapper .about-contact-item:nth-child(2) a:hover span {
