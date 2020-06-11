@@ -127,7 +127,9 @@ main.grid-container {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
   grid-area: banner;
-  background: url("/img/drg-logo-2020-pink-optimised.svg") #222 no-repeat;
+  background-image: url("/img/singerica-webp.webp");
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: 100% 100%;
   position: relative;
 }
@@ -137,15 +139,13 @@ main.grid-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #f5f5f5;
+  background-color: #202020;
   z-index: 3;
   padding: 5px 5px 0 5px;
 }
 
 .banner .banner-box h1 {
   margin: 0;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -180,7 +180,7 @@ main.grid-container {
   position: relative;
   z-index: 3;
   letter-spacing: 1px;
-  color: #1267a3;
+  color: #fd267d;
   margin: 0;
   font-weight: bolder;
   text-transform: uppercase;
@@ -219,7 +219,6 @@ main.grid-container {
   grid-area: products;
   margin: 5px 0 5px 0;
   background-color: #fd267d;
-  background-color: #0c6dc7;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1399px) {
@@ -240,7 +239,6 @@ main.grid-container {
   -ms-grid-column-span: 2;
   grid-area: about;
   background-color: #fd267d;
-  background-color: #0c6dc7;
   margin: 5px 0 5px 5px;
 }
 
@@ -268,7 +266,6 @@ main.grid-container {
   -ms-grid-column-span: 2;
   grid-area: contact;
   background-color: #fd267d;
-  background-color: #0c6dc7;
   margin: 5px 0 5px 5px;
 }
 
@@ -286,8 +283,8 @@ main.grid-container {
 
 .nav-item {
   position: relative;
-  -webkit-transition: 0.3s ease-out;
-  transition: 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-item a {
@@ -295,6 +292,17 @@ main.grid-container {
   color: #202020;
   font-weight: 700;
   text-transform: uppercase;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1399px) {
@@ -327,15 +335,12 @@ main.grid-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1399px) {
-  .nav-item .nav-item-conteiner {
-    opacity: 1;
-  }
   .nav-item .nav-item-conteiner .nav-item-box a {
     background: linear-gradient(262deg, #ff7854, #fd267d);
   }
@@ -346,9 +351,6 @@ main.grid-container {
 }
 
 @media only screen and (min-width: 120px) and (max-width: 767px) {
-  .nav-item .nav-item-conteiner {
-    opacity: 1;
-  }
   .nav-item .nav-item-conteiner .nav-item-box a {
     background: linear-gradient(262deg, #ff7854, #fd267d);
   }
@@ -407,7 +409,7 @@ main.grid-container {
 }
 
 .nav-item:hover > .nav-item-conteiner {
-  opacity: 1;
+  visibility: visible;
 }
 
 .nav-item:hover > .nav-item-conteiner .nav-item-box:hover a {
@@ -561,7 +563,8 @@ main.grid-container {
 }
 
 .about-contact-wrapper .about-contact-item:nth-child(1) {
-  background: url(/img/drg-logo-2020-grey-optimised.svg) #2786ac no-repeat center center;
+  background: url("/img/singerica-webp.webp") no-repeat center center;
+  background-size: cover;
   padding: 20px;
 }
 
