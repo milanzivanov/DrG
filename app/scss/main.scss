@@ -48,6 +48,7 @@ main.grid-container {
     position: fixed;
     bottom: 0;
     right: 0;
+    z-index: 5;
     // background-color: #fd267d;
     background-image: linear-gradient(to bottom,#33A09E,#227CB3);
     display: none;
@@ -398,6 +399,18 @@ main.grid-container {
         }
     }
 
+    .products-title__men {
+        h2 {
+            color: #0c6dc7;
+        } 
+    }
+
+    .products-title__kids {
+        h2 {
+            color: #33A09E;
+        } 
+    }
+
     .products-container {
         display: flex;
         flex-wrap: wrap;
@@ -410,8 +423,31 @@ main.grid-container {
             margin: 5px 5px 0 0;
             background-color: #f5f5f5;
 
+            flex-direction: column;
+            position: relative;
+
+            .products-item__text {
+                width: 100%;
+                background: linear-gradient(262deg, #0c6dc7, #15638e);
+                text-align: center;
+                padding: 20px 0;
+                color: white;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .products-item__women {
+                background: linear-gradient(262deg, #ff7854, #fd267d);
+            }
+
+            .products-item__kids {
+                background-image: linear-gradient(to bottom,#33A09E,#227CB3);
+            }
+
             @include breakpoint(tablet) {
-                flex: 1 1 calc(50% - 20px);
+                flex: 1 1 calc(33.3333% - 20px);
             }
             @include breakpoint(mobile) {
                 flex: 1 1 calc(100% - 20px);
