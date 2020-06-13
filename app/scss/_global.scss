@@ -17,6 +17,179 @@ body {
     color: #000;
 }
 
+/// start
+
+html {
+    background-color: #fff;
+    color: #6f7e8a;
+    font-family: "Roboto",sans-serif;
+    font-size: 1em;
+    line-height: 24px;
+    font-weight: 300;
+    height: 100%
+}
+
+body {
+    overflow-y: scroll;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    min-height: 100%;
+    position: relative;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease
+}
+
+body * {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+// .nav-main {
+//     width: 100%;
+//     position: relative;
+//     z-index: 10;
+//     margin-left: 0;
+// }
+
+// .grid {
+//     font-size: 0;
+//     list-style: none;
+//     margin: 0;
+//     margin-left: -20px;
+//     padding: 0;
+// }
+
+// .nav-main .nav__item1 {
+//     background-color: #0c6dc7;
+// }
+
+// .nav-main .grid__item {
+//     height: 290px;
+//     width: 25% \9;
+//     float: left;
+//     margin-bottom: 0;
+//     position: relative;
+//     overflow: hidden;
+//     -moz-transition: all 0.3s ease;
+//     -o-transition: all 0.3s ease;
+//     -webkit-transition: all 0.3s ease;
+//     transition: all 0.3s ease;
+// }
+
+// .grid__item {
+//     -webkit-box-sizing: border-box;
+//     -moz-box-sizing: border-box;
+//     box-sizing: border-box;
+//     display: inline-block;
+//     font-size: 16px;
+//     font-size: px-rem(16px);
+//     margin-bottom: 20px;
+//     padding-left: 20px;
+//     vertical-align: top;
+// }
+
+// .nav-main .grid__item:before {
+//     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNDgwcHgiIGhlaWdodD0iMjkxcHgiIHZpZXdCb3g9IjAgMCA0ODAgMjkxIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA0ODAgMjkxIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxpbWFnZSBvdmVyZmxvdz0idmlzaWJsZSIgd2lkdGg9IjQ4MCIgaGVpZ2h0PSIyOTEiIHhsaW5rOmhyZWY9Ii4uLy4uL2NvZGUvaW1hZ2VzL2hvbWUtbmF2L2RpYWdvbmFsLWxpbmUucG5nIiAgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgMSAwIDQuODgyODEzZS0wMDQpIj4NCjwvaW1hZ2U+DQo8bGluZSBvcGFjaXR5PSIwLjMiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiB4MT0iMCIgeTE9IjI5MSIgeDI9IjQ4MCIgeTI9IjAiLz4NCjwvc3ZnPg0K);
+//     background-repeat: no-repeat;
+//     background-position: 0 0;
+//     background-size: 100% 100%;
+//     display: none\9;
+// }
+
+// .nav-main .grid__item:after, .nav-main .grid__item:before {
+//     content: '';
+//     display: block;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     bottom: 0;
+//     right: 0;
+//     width: 100%;
+//     height: 100%;
+//     display: block;
+//     -moz-transition: all 0.8s ease;
+//     -o-transition: all 0.8s ease;
+//     -webkit-transition: all 0.8s ease;
+//     transition: all 0.8s ease;
+// }
+
+// .nav-main .nav__item1 .img-wrap {
+//     background-image: url("/img/drg-logo-2020-grey-optimised.svg");
+// }
+
+// .nav-main .img-wrap {
+//     width: 100%;
+//     height: 100%;
+//     display: block;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     background-repeat: no-repeat;
+//     visibility: hidden;
+//     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+//     opacity: 0;
+//     -moz-transition: all 0.4s ease;
+//     -o-transition: all 0.4s ease;
+//     -webkit-transition: all 0.4s ease;
+//     transition: all 0.4s ease;
+//     opacity: 1\9;
+//     visibility: visible\9;
+//     display: none\9;
+// }
+
+// .nav-main .text-wrap {
+//     font-family: "Montserrat",sans-serif;
+//     font-size: 18px;
+//     font-size: px-rem(18px);
+//     position: absolute;
+//     bottom: 50px;
+//     right: 50px;
+//     // visibility: hidden;
+//     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+//     // opacity: 0;
+//     -moz-transition: all 0.4s ease;
+//     -o-transition: all 0.4s ease;
+//     -webkit-transition: all 0.4s ease;
+//     transition: all 0.4s ease;
+//     opacity: 1\9;
+//     visibility: visible\9;
+//     // display: none\9;
+//     -moz-transition: none;
+//     -o-transition: none;
+//     -webkit-transition: none;
+//     transition: none;
+// }
+
+// .nav-main .nav__item1:after {
+//     background-image: url("/img/drg-logo-2020-pink-optimised.svg");
+// }
+
+// .nav-main .grid__item:after {
+//     background-position: 50% 50%;
+//     background-repeat: no-repeat;
+// }
+
+// .nav-main .grid__item:after, .nav-main .grid__item:before {
+//     content: '';
+//     display: block;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     bottom: 0;
+//     right: 0;
+//     width: 100%;
+//     height: 100%;
+//     display: block;
+//     -moz-transition: all 0.8s ease;
+//     -o-transition: all 0.8s ease;
+//     -webkit-transition: all 0.8s ease;
+//     transition: all 0.8s ease;
+// }
+
+/// end
+
 h1,h2,h3,h4,h5,h6 {
     margin: 0;
 }

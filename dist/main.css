@@ -19,6 +19,31 @@ body {
   color: #000;
 }
 
+html {
+  background-color: #fff;
+  color: #6f7e8a;
+  font-family: "Roboto",sans-serif;
+  font-size: 1em;
+  line-height: 24px;
+  font-weight: 300;
+  height: 100%;
+}
+
+body {
+  overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  min-height: 100%;
+  position: relative;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+body * {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
@@ -127,6 +152,7 @@ main.grid-container {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
   grid-area: banner;
+  background-image: url("/img/singerica.jpg");
   background-image: url("/img/singerica-webp.webp");
   background-repeat: no-repeat;
   background-position: center;
@@ -181,8 +207,9 @@ main.grid-container {
   z-index: 3;
   letter-spacing: 1px;
   color: #fd267d;
+  color: #f5f5f5;
   margin: 0;
-  font-weight: bolder;
+  font-weight: bold;
   text-transform: uppercase;
   font-size: 1.3em;
 }
@@ -196,7 +223,7 @@ main.grid-container {
 
 @media only screen and (min-width: 120px) and (max-width: 767px) {
   .banner .banner-box h2.element {
-    padding: 5px 0 0 0;
+    padding: 5px 0 5px 0;
     font-size: .8em;
   }
 }
@@ -283,8 +310,6 @@ main.grid-container {
 
 .nav-item {
   position: relative;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
 }
 
 .nav-item a {
@@ -313,7 +338,7 @@ main.grid-container {
 
 @media only screen and (min-width: 120px) and (max-width: 767px) {
   .nav-item a {
-    font-size: 1em;
+    font-size: .9em;
   }
 }
 
@@ -335,8 +360,7 @@ main.grid-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  opacity: 0;
   visibility: hidden;
 }
 
@@ -376,6 +400,10 @@ main.grid-container {
   background-color: #fff;
   height: calc(100% - 10px);
   margin: 5px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .nav-item .nav-item-conteiner .nav-item-box:nth-child(1n) {
@@ -397,7 +425,6 @@ main.grid-container {
       -ms-flex-align: center;
           align-items: center;
   color: #003f88;
-  border-radius: 50%;
   height: 100px;
   width: 100px;
 }
@@ -408,7 +435,14 @@ main.grid-container {
   padding: 0;
 }
 
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .nav-item .nav-item-conteiner .nav-item-box a span {
+    font-size: .9em;
+  }
+}
+
 .nav-item:hover > .nav-item-conteiner {
+  opacity: 1;
   visibility: visible;
 }
 
@@ -463,6 +497,18 @@ main.grid-container {
   font-size: 1.5em;
   text-align: center;
   padding: 30px 0;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1399px) {
+  .section-container .products-title h2 {
+    font-size: 1.3em;
+  }
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .section-container .products-title h2 {
+    font-size: 1em;
+  }
 }
 
 .section-container .products-container {
@@ -647,6 +693,7 @@ footer.footer-wrapper {
 @media only screen and (min-width: 120px) and (max-width: 767px) {
   footer.footer-wrapper small {
     margin-bottom: 10px;
+    text-align: center;
   }
 }
 

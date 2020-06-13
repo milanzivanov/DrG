@@ -68,7 +68,7 @@ main.grid-container {
     position: relative;
     grid-area: banner;
     
-    // background-image: url("/img/singerica.jpg");
+    background-image: url("/img/singerica.jpg");
     background-image: url("/img/singerica-webp.webp");
     background-repeat: no-repeat;
     background-position: center;
@@ -89,7 +89,6 @@ main.grid-container {
         
         h1 {
             margin: 0;
-            // transition: all 0.3s ease-in-out;
 
             display: flex;
             justify-content: center;
@@ -116,8 +115,9 @@ main.grid-container {
             z-index: 3;
             letter-spacing: 1px;
             color: #fd267d;
+            color: #f5f5f5;
             margin: 0;
-            font-weight: bolder;
+            font-weight: bold;
             text-transform: uppercase;
             font-size: 1.3em;
     
@@ -127,7 +127,7 @@ main.grid-container {
             }
     
             @include breakpoint(mobile) {
-                padding: 5px 0 0 0;
+                padding: 5px 0 5px 0;
                 font-size: .8em
             }
         }
@@ -150,6 +150,7 @@ main.grid-container {
     grid-area: products;
     margin: 5px 0 5px 0;
 
+
     background-color: #fd267d;
     // background-color: #0c6dc7;
     // background-color: #d5d5d5;
@@ -171,6 +172,7 @@ main.grid-container {
 
     margin: 5px 0 5px 5px;
 
+
     @include breakpoint(tablet) {
         margin: 5px 5px 0 5px;
     }
@@ -182,6 +184,8 @@ main.grid-container {
 }
 
 .about, .contact {
+
+
     svg {
         @include breakpoint(mobile) {
             width: 30px;
@@ -196,6 +200,7 @@ main.grid-container {
 
     margin: 5px 0 5px 5px;
 
+
     @include breakpoint(tablet) {
         margin: 5px;
     }
@@ -208,7 +213,6 @@ main.grid-container {
 
 .nav-item {
     position: relative;
-    transition: all 0.3s ease-in-out;
 
     a {
         font-size: 1.5em;
@@ -227,7 +231,7 @@ main.grid-container {
         }
     
         @include breakpoint(mobile) {
-            font-size: 1em;
+            font-size: .9em;
         }
         
         span {
@@ -244,9 +248,7 @@ main.grid-container {
         justify-content: center;
         align-items: center;
                 
-        transition: all 0.3s ease-in-out;
-
-        // opacity: 0;
+        opacity: 0;
         // display: none;
         visibility: hidden;
 
@@ -256,6 +258,7 @@ main.grid-container {
 
             .nav-item-box a {
                 background: linear-gradient(262deg, #ff7854, #fd267d);
+
     
                 svg, span {
                     color: #fff;
@@ -285,6 +288,10 @@ main.grid-container {
             background-color: #fff;
             height: calc(100% - 10px);
             margin: 5px;
+
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transition: all .3s ease;
             
             &:nth-child(1n) {
                 margin-right: 0;
@@ -299,7 +306,7 @@ main.grid-container {
                 justify-content: center;
                 align-items: center;
                 color: #003f88;
-                border-radius: 50%;
+                // border-radius: 50%;
                 height: 100px;
                 width: 100px;
 
@@ -307,6 +314,10 @@ main.grid-container {
                     text-align: center;
                     font-size: 1rem;
                     padding: 0;
+
+                    @include breakpoint(mobile) {
+                        font-size: .9em;
+                    }
                 }
             }
         }
@@ -314,9 +325,12 @@ main.grid-container {
 
 
     &:hover > .nav-item-conteiner {
-        // opacity: 1;
-        // display: flex;
+
+        opacity: 1;
         visibility: visible;
+        // display: flex;
+
+
 
         .nav-item-box:hover a {
             background: linear-gradient(262deg, #ff7854, #fd267d);
@@ -334,7 +348,7 @@ main.grid-container {
 .nav-item:hover {
     cursor: pointer;
     background: linear-gradient(262deg, #0c6dc7, #15638e);
-  
+
     a {
         color: #fff;
     }
@@ -355,12 +369,21 @@ main.grid-container {
         align-items: center;
 
         background-color: #f5f5f5;
+
         h2 {
             color: #fd267d;
             text-transform: uppercase;
             font-size: 1.5em;
             text-align: center;
             padding: 30px 0;
+
+            @include breakpoint(tablet) {
+                font-size: 1.3em
+            }
+    
+            @include breakpoint(mobile) {
+                font-size: 1em
+            }
         }
     }
 
@@ -486,6 +509,7 @@ footer.footer-wrapper {
     small {
         @include breakpoint(mobile) {
             margin-bottom: 10px;
+            text-align: center;
         }
         span {
             margin: 0;
