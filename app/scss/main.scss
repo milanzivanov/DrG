@@ -214,6 +214,9 @@ main.grid-container {
 .nav-item {
     position: relative;
 
+    backface-visibility: hidden;
+    transition: all .3s ease;
+
     a {
         font-size: 1.5em;
         color: #202020;
@@ -237,6 +240,11 @@ main.grid-container {
         span {
             padding-left: 10px;
         }
+
+        .svg__icon {
+            width: 30px;
+            color: #202020;
+        }
     }
     
     .nav-item-conteiner {
@@ -248,9 +256,12 @@ main.grid-container {
         justify-content: center;
         align-items: center;
                 
-        opacity: 0;
+        // opacity: 0;
         // display: none;
         visibility: hidden;
+
+        backface-visibility: hidden;
+        transition: all .3s ease;
 
         ///////////
         @include breakpoint(tablet) {
@@ -288,10 +299,6 @@ main.grid-container {
             background-color: #fff;
             height: calc(100% - 10px);
             margin: 5px;
-
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            transition: all .3s ease;
             
             &:nth-child(1n) {
                 margin-right: 0;
@@ -306,9 +313,13 @@ main.grid-container {
                 justify-content: center;
                 align-items: center;
                 color: #003f88;
-                // border-radius: 50%;
+                border-radius: 50%;
                 height: 100px;
                 width: 100px;
+
+                @include breakpoint(mobile) {
+                    border-radius: 0;
+                }
 
                 span {
                     text-align: center;
@@ -326,7 +337,7 @@ main.grid-container {
 
     &:hover > .nav-item-conteiner {
 
-        opacity: 1;
+        // opacity: 1;
         visibility: visible;
         // display: flex;
 

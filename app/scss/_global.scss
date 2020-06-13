@@ -22,7 +22,6 @@ body {
 html {
     background-color: #fff;
     color: #6f7e8a;
-    font-family: "Roboto",sans-serif;
     font-size: 1em;
     line-height: 24px;
     font-weight: 300;
@@ -35,9 +34,6 @@ body {
     overflow-x: hidden;
     min-height: 100%;
     position: relative;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease
 }
 

@@ -22,7 +22,6 @@ body {
 html {
   background-color: #fff;
   color: #6f7e8a;
-  font-family: "Roboto",sans-serif;
   font-size: 1em;
   line-height: 24px;
   font-weight: 300;
@@ -310,6 +309,10 @@ main.grid-container {
 
 .nav-item {
   position: relative;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .nav-item a {
@@ -346,6 +349,11 @@ main.grid-container {
   padding-left: 10px;
 }
 
+.nav-item a .svg__icon {
+  width: 30px;
+  color: #202020;
+}
+
 .nav-item .nav-item-conteiner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -360,8 +368,11 @@ main.grid-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  opacity: 0;
   visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1399px) {
@@ -400,10 +411,6 @@ main.grid-container {
   background-color: #fff;
   height: calc(100% - 10px);
   margin: 5px;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
 }
 
 .nav-item .nav-item-conteiner .nav-item-box:nth-child(1n) {
@@ -425,8 +432,15 @@ main.grid-container {
       -ms-flex-align: center;
           align-items: center;
   color: #003f88;
+  border-radius: 50%;
   height: 100px;
   width: 100px;
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .nav-item .nav-item-conteiner .nav-item-box a {
+    border-radius: 0;
+  }
 }
 
 .nav-item .nav-item-conteiner .nav-item-box a span {
@@ -442,7 +456,6 @@ main.grid-container {
 }
 
 .nav-item:hover > .nav-item-conteiner {
-  opacity: 1;
   visibility: visible;
 }
 
