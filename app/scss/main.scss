@@ -436,6 +436,18 @@ main.grid-container {
                 bottom: 0;
                 left: 0;
                 right: 0;
+
+                h4 {
+                    font-size: 1.3em;
+
+                    @include breakpoint(tablet) {
+                        font-size: 1em;
+                    }
+
+                    @include breakpoint(mobile) {
+                        font-size: .8em
+                    }
+                }
             }
 
             .products-item__women {
@@ -580,4 +592,3 @@ footer.footer-wrapper {
         }
     }
 }
-
