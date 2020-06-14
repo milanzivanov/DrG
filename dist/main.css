@@ -569,10 +569,26 @@ main.grid-container {
   bottom: 0;
   left: 0;
   right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.section-container .products-container .products-item .products-item__text svg {
+  width: 30px;
 }
 
 .section-container .products-container .products-item .products-item__text h4 {
   font-size: 1.3em;
+  padding-right: 10px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1399px) {
@@ -585,6 +601,15 @@ main.grid-container {
   .section-container .products-container .products-item .products-item__text h4 {
     font-size: .8em;
   }
+}
+
+.section-container .products-container .products-item .products-item__text:hover {
+  background: #fd267d;
+}
+
+.section-container .products-container .products-item .products-item__text:hover h4,
+.section-container .products-container .products-item .products-item__text:hover svg {
+  color: #f5f5f5;
 }
 
 .section-container .products-container .products-item .products-item__women {

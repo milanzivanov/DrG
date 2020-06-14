@@ -7,6 +7,18 @@ var typed = new Typed('.element', {
 $(document).ready(function() {
     'use strict';
 
+    $('.test-popup-link').magnificPopup({
+        type: 'image',
+        // other options
+        gallery: {
+            enabled: true
+        },
+        image: {
+            // options for image content type
+            titleSrc: 'title'
+          }
+      });
+
     // scroll to section
     $('a[href^="#"]').bind('click', function(e) {
         e.preventDefault(); 

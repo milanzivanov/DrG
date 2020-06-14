@@ -441,8 +441,19 @@ main.grid-container {
                 left: 0;
                 right: 0;
 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                transition: all .3s ease;
+
+                svg {
+                    width: 30px;
+                }
+
                 h4 {
                     font-size: 1.3em;
+                    padding-right: 10px;
 
                     @include breakpoint(tablet) {
                         font-size: 1em;
@@ -452,6 +463,16 @@ main.grid-container {
                         font-size: .8em
                     }
                 }
+
+                &:hover {
+                    background: #fd267d;
+    
+                    h4,
+                    svg {
+                        color: #f5f5f5;
+                    }
+                }
+                
             }
 
             .products-item__women {
