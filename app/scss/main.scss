@@ -596,6 +596,16 @@ footer.footer-wrapper {
             margin: 0;
             padding: 10px 0;
             color: #222;
+            display: flex;
+
+            @include breakpoint(mobile) {
+                flex-direction: column;
+            }
+
+            a {
+                margin-left: 5px;
+                color: #0c6dc7;
+            }
         }
     }
     a {

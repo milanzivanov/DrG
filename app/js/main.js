@@ -7,6 +7,13 @@ var typed = new Typed('.element', {
 $(document).ready(function() {
     'use strict';
 
+    // css loader 
+    if (window.onload = function() {
+        $(".loader").fadeOut(500, (function() {
+            $(".is-active").remove()
+        }));
+    });
+
     $('.test-popup-link').magnificPopup({
         type: 'image',
         // other options
