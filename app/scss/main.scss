@@ -73,10 +73,6 @@ main.grid-container {
     background-image: url("/img/singerica-webp.webp");
     background-repeat: no-repeat;
     background-position: center;
-
-    // background: url("/img/drg-logo-2020.svg") #222 no-repeat 100% 100%;
-    // background: url("/img/drg-logo-2020-grey-optimised.svg") #222 no-repeat 100% 100%;
-    // background: url("/img/drg-logo-2020-pink-optimised.svg") #222 no-repeat;
     
     background-size: 100% 100%;
 
@@ -150,7 +146,6 @@ main.grid-container {
 .products { 
     grid-area: products;
     margin: 5px 0 5px 0;
-
 
     background-color: #fd267d;
     // background-color: #0c6dc7;
@@ -266,7 +261,7 @@ main.grid-container {
 
         ///////////
         @include breakpoint(tablet) {
-            // opacity: 1;
+            visibility: visible;
 
             .nav-item-box a {
                 background: linear-gradient(262deg, #ff7854, #fd267d);
@@ -279,14 +274,14 @@ main.grid-container {
             }
         }
         @include breakpoint(mobile) {
-            // opacity: 1;
+            visibility: visible;
 
             .nav-item-box a {
-                background: linear-gradient(262deg, #ff7854, #fd267d);
+                background-color: #fd267d;
     
                 svg, span {
-                    color: #fff;
-                    fill: #fff;
+                    color: #222;
+                    fill: #222;
                 }
             }
         }
@@ -319,6 +314,8 @@ main.grid-container {
                 width: 100px;
 
                 @include breakpoint(mobile) {
+                    height: 100%;
+                    width: 100%;
                     border-radius: 0;
                 }
 
@@ -532,11 +529,11 @@ main.grid-container {
         align-items: center;
 
         &:nth-child(1) {
-            background: url("/img/singerica-webp.webp") no-repeat center center;
+            // background: url("/img/singerica-webp.webp") no-repeat center center;
+            background: url("/img/sareni-konci-webp.webp") no-repeat center center;
             background-size: cover;
             padding: 20px;
             .about-text {
-                // background: url(/img/drg-logo-2020-grey-optimised.svg) #2786ac no-repeat center center;
 
                 display: flex;
                 flex-direction: column;
