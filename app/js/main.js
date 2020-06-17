@@ -14,7 +14,8 @@ $(document).ready(function() {
         }));
     });
 
-    $('.test-popup-link').magnificPopup({
+    // Magnific popup
+    $('.magnific-popup-link').magnificPopup({
         type: 'image',
         // other options
         gallery: {
