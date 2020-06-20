@@ -195,13 +195,18 @@ main.grid-container {
 
 .nav-item {
     position: relative;
+    background-color: #fd267d;
 
+    // transition: all .3s ease;
     a {
+        transition: background-color .3s ease;
+        background-color: #fd267d;
+
         font-size: 1.5em;
         color: #202020;
         font-weight: 700;
         text-transform: uppercase;
-
+        
         height: 100%;
         width: 100%;
         display: flex;
@@ -218,11 +223,17 @@ main.grid-container {
         
         span {
             padding-left: 10px;
+            transition: all 0.3s ease 0.2s;
         }
+
+        // .text-wrap {
+        //     transition: all 0.3s ease 0.2s;
+        // }
 
         .svg__icon {
             width: 30px;
             color: #202020;
+            transition: all 0.3s ease 0.2s;
         }
     }
     
@@ -335,10 +346,11 @@ main.grid-container {
 
 .nav-item:hover {
     cursor: pointer;
-    background: linear-gradient(262deg, #0c6dc7, #15638e);
+    // background: linear-gradient(262deg, #0c6dc7, #15638e);
 
     a {
         color: #fff;
+        background-color: #15638e;
 
         svg {
             fill: #fff;

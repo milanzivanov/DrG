@@ -300,9 +300,13 @@ main.grid-container {
 
 .nav-item {
   position: relative;
+  background-color: #fd267d;
 }
 
 .nav-item a {
+  -webkit-transition: background-color .3s ease;
+  transition: background-color .3s ease;
+  background-color: #fd267d;
   font-size: 1.5em;
   color: #202020;
   font-weight: 700;
@@ -334,11 +338,15 @@ main.grid-container {
 
 .nav-item a span {
   padding-left: 10px;
+  -webkit-transition: all 0.3s ease 0.2s;
+  transition: all 0.3s ease 0.2s;
 }
 
 .nav-item a .svg__icon {
   width: 30px;
   color: #202020;
+  -webkit-transition: all 0.3s ease 0.2s;
+  transition: all 0.3s ease 0.2s;
 }
 
 .nav-item .nav-item-conteiner {
@@ -463,11 +471,11 @@ main.grid-container {
 
 .nav-item:hover {
   cursor: pointer;
-  background: linear-gradient(262deg, #0c6dc7, #15638e);
 }
 
 .nav-item:hover a {
   color: #fff;
+  background-color: #15638e;
 }
 
 .nav-item:hover a svg {
