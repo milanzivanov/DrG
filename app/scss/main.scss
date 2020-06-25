@@ -356,6 +356,9 @@ main.grid-container {
 
         background-color: #f5f5f5;
 
+        // background: url("/img/singerica-webp.webp") center;
+        // background-size: cover;
+
         h2 {
             color: #fd267d;
             text-transform: uppercase;
@@ -399,6 +402,7 @@ main.grid-container {
 
             flex-direction: column;
             position: relative;
+
 
             .products-item__text {
                 flex-direction: column;
@@ -482,6 +486,7 @@ main.grid-container {
             }
             @include breakpoint(mobile) {
                 flex: 1 1 calc(100% - 20px);
+                margin: 5px 5px 0 5px;
             }
 
             &:nth-child(4n + 1) {
