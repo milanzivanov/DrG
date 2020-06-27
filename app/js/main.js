@@ -7,6 +7,41 @@ var typed = new Typed('.element', {
 $(document).ready(function() {
     'use strict';
 
+    // open menu
+    $("#products-box-activate").on("click", function(e) {
+        $(".products-wrap-box, .products-wrap, .svg__icon--js").toggleClass("active");
+    });
+
+    // $(".products-wrap-box__item").on("click", function(e) {
+    //     $(".products-wrap-box").removeClass("active");
+    // });
+
+    // slick
+    $('.slick-slider').slick({
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 10000,
+        slidesToShow: 1,
+        // fade: true,
+        slidesToScroll: 1,
+        prevArrow: $(".left-nav-custom"),
+        nextArrow: $(".right-nav-custom"),
+        cssEase: 'ease-out',
+        useCSS: true,
+        lazyLoad: 'progressive',
+
+        responsive: [
+            {
+              breakpoint: 1365,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                infinite: true,
+              }
+            }
+          ]
+    });
+
     // css loader 
     if (window.onload = function() {
         $(".loader").fadeOut(500, (function() {
@@ -38,6 +73,9 @@ $(document).ready(function() {
         }, 700, function() {
             location.hash = target; 
         });
+
+        // remove active class
+        $(".products-wrap-box, .products-wrap, .svg__icon--js").removeClass("active");
     
         return false;
     });

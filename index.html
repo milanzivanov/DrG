@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;900&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="/assets/magnific-popup.css">
-    <link rel="stylesheet" href="/assets/loader-bar-ping-pong.css">
+    <!-- <link rel="stylesheet" href="/assets/loader-bar-ping-pong.css"> -->
+
+    <link rel="stylesheet" href="/assets/slick.css">
+    <link rel="stylesheet" href="/assets/slick-theme.css">
+
     <link rel="stylesheet" href="dist/main.css">
     <title>DRG | PROIZVODNJA</title>
     <link rel="shortcut icon" type="image/ico" href="./img/favicon.ico">
@@ -14,9 +19,131 @@
 
 </head>
 <body>
-    
-    <main class="grid-container">
 
+    <div class="grid-container2">
+        <div class="logo">
+            <a href="javascript:;">
+                <img src="./img/drg-logo-2020-pink-optimised.svg" alt="drg logo">
+                <h2 class="element"></h2>
+            </a> 
+        </div>
+        <div class="products-wrap nav-link">
+            <a href="javascript:;" id="products-box-activate">
+                <svg class="svg__icon svg__icon--js">
+                    <use xlink:href="/img/sprites.svg#icon-arrow-down-sign-to-navigate"></use>
+                </svg>
+                <span>Proizvodi</span>
+            </a>
+
+            <!-- product wrap box hide -->
+            <div class="products-wrap-box">
+                <div class="products-wrap-box__item">
+                    <a href="#sectionMuskaKolekcija">
+                        M
+                    </a>
+                </div>
+                <div class="products-wrap-box__item">
+                    <a href="#sectionZenskaKolekcija">
+                        Ž
+                    </a>
+                </div>
+                <div class="products-wrap-box__item">
+                    <a href="#sectionDecijaKolekcija">
+                        D
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="about-wrap nav-link">
+            <a href="#sectionAbout">
+                <svg class="svg__icon">
+                    <use xlink:href="/img/sprites.svg#icon-drg-book"></use>
+                </svg>
+                <span>O Nama</span>  
+            </a>
+        </div>
+        <div class="contact-wrap nav-link">
+            <a href="#sectionContact">
+                <svg class="svg__icon">
+                    <use xlink:href="/img/sprites.svg#icon-mail"></use>
+                </svg>
+                <span>Kontakt</span>
+            </a>
+        </div>
+        <div class="banner-wrap">
+            <div class="slick-slider">
+                <div>
+                    <img src="/img/sareni-konci-webp.webp" alt="1">
+
+                    <div class="slider-text-wrapper">
+                        <div class="wrapper">
+                            <div class="slider-text__box">
+                                <h1>DrG</h1>
+                                <h2>Proizvodnja</h2>                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="/img/singerica-webp.webp" alt="2">
+
+                    <!-- <div class="slider-text-wrapper">
+                        <div class="wrapper">
+                            <div class="slider-text__box">
+                                <h1>DrG</h1>
+                                <h2>Proizvodnja</h2>                    
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+                <div>
+                    <img src="/img/sareni-konci-webp.webp" alt="3">
+
+                    <div class="slider-text-wrapper">
+                        <div class="wrapper">
+                            <div class="slider-text__box">
+                                <h1>DrG</h1>
+                                <h2>Proizvodnja</h2>                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="/img/singerica-webp.webp" alt="4">
+
+                    <!-- <div class="slider-text-wrapper">
+                        <div class="wrapper">
+                            <div class="slider-text__box">
+                                <h1>DrG</h1>
+                                <h2>Proizvodnja</h2>                    
+                            </div>
+                        </div>
+                    </div> -->
+                    
+                </div>
+
+            </div>
+            
+            <div class="arrow-container">
+                <div class="left-nav-custom">
+                    <svg class="svg__icon">
+                        <use xlink:href="/img/sprites.svg#icon-arrow-left2"></use>
+                    </svg>
+                </div>
+                <div class="right-nav-custom">
+                    <svg class="svg__icon">
+                        <use xlink:href="/img/sprites.svg#icon-arrow-right2"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+      </div>
+
+    
+    <!-- <main class="grid-container">
+        
+        
         <div class="banner flex flex-jc-c flex-ai-c">
 
             <div class="banner-box flex flex-jc-c flex-ai-c">
@@ -75,10 +202,10 @@
                 <span>Kontakt</span>
             </a>
         </div>
-    </main>
+    </main> -->
 
     <!-- css loader ping pong start -->
-    <div class="loader loader-bar-ping-pong is-active" data-rounded></div>
+    <!-- <div class="loader loader-bar-ping-pong is-active" data-rounded></div> -->
 
     <!-- btt start-->
     <div class="back-to-top">
@@ -873,6 +1000,9 @@
     <script src="/assets/jquery.magnific-popup.min.js"></script>
 
     <script src="./assets/lazysizes.min.js" async></script>
+
+    <script src="/assets/slick.min.js"></script>
+
     <script src="app/js/main.js"></script>
 </body>
 </html>
