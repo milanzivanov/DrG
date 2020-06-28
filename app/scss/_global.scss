@@ -17,7 +17,7 @@ body * {
 }
 
 body {
-    font-family: "Public Sans", sans-serif;
+    font-family: "ns", "Public Sans", sans-serif;
     font-size: 1.125rem; // 18px / 16px === 1.125rem
     line-height: 1.3;
     margin: 0;
@@ -81,7 +81,21 @@ a, a:visited, a:hover {
     src: url('/assets/fonts/NeoSansStd-Bold.eot');
     src: 
         url('/assets/fonts/NeoSansStd-Bold.eot?#iefix') format('embedded-opentype'), 
-        url('/assets/fonts/slick.woff') format('woff'), 
-        url('/assets/fonts/slick.ttf') format('truetype'), 
-        url('/assets/fonts/slick.svg#slick') format('svg');
+        url('/assets/fonts/NeoSansStd-Bold.woff') format('woff'), 
+        url('/assets/fonts/NeoSansStd-Bold.ttf') format('truetype'), 
+        url('/assets/fonts/NeoSansStd-Bold.svg#ns') format('svg');
+}
+
+@font-face {
+    font-family: 'gt';
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+
+    src: url('/assets/fonts/Gotham\ Black\ Regular.eot');
+    src: 
+        url('/assets/fonts/Gotham\ Black\ Regular.eot?#iefix') format('embedded-opentype'), 
+        url('/assets/fonts/Gotham\ Black\ Regular.woff') format('woff'), 
+        url('/assets/fonts/Gotham\ Black\ Regular.ttf') format('truetype'), 
+        url('/assets/fonts/Gotham\ Black\ Regular.svg#gt') format('svg');
 }

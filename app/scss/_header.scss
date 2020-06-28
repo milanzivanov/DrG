@@ -1,18 +1,32 @@
-.grid-container2 {
+main.main-grid-container {
     height: 100vh;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: 
-        "logo products-wrapper products-wrapper about-wrapper about-wrapper contact-wrapper contact-wrapper" 
-        "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper" 
-        "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper" 
-        "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper" 
-        "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper" 
-        "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper";
+    "logo products-wrapper products-wrapper about-wrapper about-wrapper contact-wrapper contact-wrapper" 
+    "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper" 
+    "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper" 
+    "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper" 
+    "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper" 
+    "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper";
+    
+    @include breakpoint(mobile) {
+
+
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper" 
+            "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper" 
+            "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper" 
+            "products-wrapper products-wrapper products-wrapper products-wrapper products-wrapper products-wrapper products-wrapper" 
+            "about-wrapper about-wrapper about-wrapper about-wrapper about-wrapper about-wrapper about-wrapper"
+            "contact-wrapper contact-wrapper contact-wrapper contact-wrapper contact-wrapper contact-wrapper contact-wrapper";
+    }
+
 }
-  
+
 .logo { 
     grid-area: logo;
     display: flex;
@@ -21,6 +35,10 @@
     padding: 20px;
     background-color: #222;
     transition: all 0.3s ease;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
 
     a {
         display: flex;
@@ -35,28 +53,18 @@
         }
 
         h2 {
-            font-family: "ns", sans-serif;
+            font-family: "gt", sans-serif;
             letter-spacing: .5px;
             color: #f5f5f5;
             padding-top: 5px;
             font-size: 20px;
         }
     }
-
-    &:hover  {
-        background-color: #15638e;
-        a {
-            h2 {
-                color: #fd267d;
-            }
-        }
-    }
 }
 
 .nav-link {
-    
     a {
-        // border-left: 1px solid #222;
+        border-left: 1px solid #22222229;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -73,16 +81,16 @@
         }
 
         .svg__icon {
-            height: 40px;
+            height: 30px;
         }
 
-        // rotate down on click
+        // rotate 180deg arrow down on click
         .svg__icon--js.active {
+            transition: all 0.3s ease-in-out;
             transform: rotateZ(180deg);
         }
 
         &:hover {
-            // background-color: #1170c8;
             background-color: #15638e;
             span,
             .svg__icon {
@@ -93,7 +101,6 @@
     }
 }
 
-
 .products-wrap { 
     grid-area: products-wrapper;
     position: relative;
@@ -102,8 +109,8 @@
         position: absolute;
         z-index: 11;
         width: 100%;
+        overflow: hidden;
         flex-wrap: wrap;
-        background-color: #fd267d;
 
         display: none;
 
@@ -111,30 +118,35 @@
             flex: 1;
             
             a {
-                background-color: #fd267d;
                 display: flex;
                 height: 100%;
                 width: 100%;
                 padding: 20px;
             }
         }
-        // mistic bug   
-        // .products-wrap-box__item::nth-child(odd) {
-        //     background-color: #15638e;
-        // }
     }
 
     .products-wrap-box.active {
         display: flex;
-        
 
+        @include breakpoint(mobile) {
+            border-top: 1px solid #22222229;
+        }
+        
         .products-wrap-box__item {
             a {
-                background-color: #15638e;
+                background-color: #fd267d;
+                color: #f2f2f2;
 
-                &:hover {
-                    background-color: #fd267d;
+                @include breakpoint(mobile) {
+                    background-color: #15638e;
                 }
+                
+                &:hover {
+                    background-color: #15638e;
+                    color: #f2f2f2;
+                }
+
             }
         }
     }
@@ -152,7 +164,13 @@
 
 
 .about-wrap { 
-    grid-area: about-wrapper; 
+    grid-area: about-wrapper;
+
+    @include breakpoint(mobile) {
+        border-top: 1px solid #22222229;
+        border-bottom: 1px solid #22222229;
+    }
+
 }
   
 .contact-wrap { 
@@ -163,8 +181,7 @@
     grid-area: banner-wrapper;
     position: relative;
 
-
-
+    // slick slider
     .slick-slider {
         div {
             position: relative;
@@ -176,6 +193,12 @@
                 @include breakpoint(tablet) {
                     height: 524px;
                 }
+
+                @include breakpoint(mobile) {
+                    min-height: 309px;
+                    height: 309px;
+                    max-width: 100%;
+                }
             }
 
             .slider-text-wrapper {
@@ -185,31 +208,35 @@
                 left: 0;
                 right: 0;
                 .wrapper {
-                    max-width: 1200px;
-                    margin: auto;
+                    // for one img slider use
+                    // max-width: 1200px;
+                    // margin: auto;
                     height: 100%;
                     display: flex;
                     justify-content: flex-start;
                     align-items: center;
 
-                    @include breakpoint(tablet) {
-                        max-width: 960px;
-                    }
+                    // @include breakpoint(tablet) {
+                    //     max-width: 960px;
+                    // }
 
                     .slider-text__box {
                         display: flex;
                         flex-direction: column;
                         align-items: flex-start;
                         justify-content: center;
+                        padding: 0 0 0 150px;
 
-                        @include breakpoint(tablet) {
-                            padding: 0 0 0 150px;
+                        @include breakpoint(mobile) {
+                            align-items: center;
+                            padding: 0;
+                            display: none;
                         }
         
                         h1,
                         h2 {
                             padding: 5px;
-                            font-family: "ns", "Public Sans", sans-serif;
+                            font-family: 'gt', "Public Sans", sans-serif;
                             letter-spacing: 1px;
                             color: #f2f2f2;
                             font-weight: bold;
@@ -218,20 +245,67 @@
                         h1 {
                             background-color: #fd267d;
                             margin-bottom: 5px;
-                            font-size: 80px;
+                            font-size: 70px;
 
                             @include breakpoint(tablet) {
-                                font-size: 70px;
+                                font-size: 40px;
+                            }
+
+                            @include breakpoint(mobile) {
+                                font-size: 20px;
                             }
                         }
                         
                         h2 {
                             background-color: #15638e;
-                            text-transform: uppercase;
                             font-size: 50px;
 
                             @include breakpoint(tablet) {
-                                font-size: 40px;
+                                font-size: 30px;
+                            }
+
+                            @include breakpoint(mobile) {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+
+                    // logo mobile
+                    h1.logo-mobile {
+
+                        @include breakpoint(desktop) {
+                            display: none;
+                        }
+
+                        @include breakpoint(tablet) {
+                            display: none;
+                        }
+
+                        @include breakpoint(mobile) {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
+                            a {
+                                padding: 5px;
+                                background-color: #222;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                img {
+                                    height: 70px;
+                                    min-height: auto;
+                                    width: 150px;
+                                    margin-bottom: 5px;
+                                }
+    
+                                h4 {
+                                    font-size: 20px;
+                                    color: #f2f2f2;
+                                    letter-spacing: 1px;
+                                    text-transform: uppercase;
+                                }
                             }
                         }
                     }
@@ -251,6 +325,10 @@
             width: auto;
             background-color: #f2f2f2;
             padding: 10px;
+
+            @include breakpoint(mobile) {
+                background-color: transparent;
+            }
 
             li button:before {
                 font-size: 10px;
@@ -280,27 +358,35 @@
         align-items: center;
         padding: 10px;
 
+        // @include breakpoint(mobile) {
+        //     top: 0;
+        //     transform: translateY(0);
+        // }
+
         .left-nav-custom.slick-arrow,
         .right-nav-custom.slick-arrow {
-            background-color: #fd267d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // background-color: #fd267d;
             padding: 10px;
             cursor: pointer;
             color: #fff;
+            outline: transparent;
             
             &:hover {
-                background-color: #15638e;
+                // background-color: #15638e;
+                color: #15638e;
+                outline: transparent;
+            }
+            .svg__icon {
+                @include breakpoint(mobile) {
+                    height: 30px;
+                    width: 30px;
+                    outline: transparent;
+                }
+
             }
         }
     }
-
-    // &::after {
-    //     content: "";
-    //     background-color: rgba(12, 12, 12, 0.2);
-    //     position: absolute;
-    //     z-index: 2;
-    //     top: 0;
-    //     left: 0;
-    //     right: 0;
-    //     bottom: 0;
-    // }
 }

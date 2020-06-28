@@ -12,17 +12,12 @@ $(document).ready(function() {
         $(".products-wrap-box, .products-wrap, .svg__icon--js").toggleClass("active");
     });
 
-    // $(".products-wrap-box__item").on("click", function(e) {
-    //     $(".products-wrap-box").removeClass("active");
-    // });
-
     // slick
     $('.slick-slider').slick({
         dots: true,
         autoplay: true,
         autoplaySpeed: 10000,
-        slidesToShow: 1,
-        // fade: true,
+        slidesToShow: 2,
         slidesToScroll: 1,
         prevArrow: $(".left-nav-custom"),
         nextArrow: $(".right-nav-custom"),
@@ -32,11 +27,13 @@ $(document).ready(function() {
 
         responsive: [
             {
-              breakpoint: 1365,
+              breakpoint: 767,
               settings: {
-                slidesToShow: 2,
+                // dots: false,
+                slidesToShow: 1,
                 slidesToScroll: 1,
                 infinite: true,
+                // fade: true
               }
             }
           ]

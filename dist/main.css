@@ -19,7 +19,7 @@ body * {
 }
 
 body {
-  font-family: "Public Sans", sans-serif;
+  font-family: "ns", "Public Sans", sans-serif;
   font-size: 1.125rem;
   line-height: 1.3;
   margin: 0;
@@ -85,12 +85,21 @@ a, a:visited, a:hover {
   font-style: normal;
   font-display: swap;
   src: url("/assets/fonts/NeoSansStd-Bold.eot");
-  src: url("/assets/fonts/NeoSansStd-Bold.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/slick.woff") format("woff"), url("/assets/fonts/slick.ttf") format("truetype"), url("/assets/fonts/slick.svg#slick") format("svg");
+  src: url("/assets/fonts/NeoSansStd-Bold.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/NeoSansStd-Bold.woff") format("woff"), url("/assets/fonts/NeoSansStd-Bold.ttf") format("truetype"), url("/assets/fonts/NeoSansStd-Bold.svg#ns") format("svg");
+}
+
+@font-face {
+  font-family: 'gt';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("/assets/fonts/Gotham Black Regular.eot");
+  src: url("/assets/fonts/Gotham Black Regular.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Gotham Black Regular.woff") format("woff"), url("/assets/fonts/Gotham Black Regular.ttf") format("truetype"), url("/assets/fonts/Gotham Black Regular.svg#gt") format("svg");
 }
 
 /* ----------------- Media queris
 ----------------------------------------------------------------------- */
-.grid-container2 {
+main.main-grid-container {
   height: 100vh;
   width: 100%;
   display: -ms-grid;
@@ -100,6 +109,14 @@ a, a:visited, a:hover {
   -ms-grid-rows: auto 1fr 1fr 1fr 1fr 1fr;
       grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr;
       grid-template-areas: "logo products-wrapper products-wrapper about-wrapper about-wrapper contact-wrapper contact-wrapper"  "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper"  "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper"  "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper"  "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper"  "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper";
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  main.main-grid-container {
+    -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper"  "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper"  "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper"  "products-wrapper products-wrapper products-wrapper products-wrapper products-wrapper products-wrapper products-wrapper"  "about-wrapper about-wrapper about-wrapper about-wrapper about-wrapper about-wrapper about-wrapper" "contact-wrapper contact-wrapper contact-wrapper contact-wrapper contact-wrapper contact-wrapper contact-wrapper";
+  }
 }
 
 .logo {
@@ -119,6 +136,12 @@ a, a:visited, a:hover {
   background-color: #222;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .logo {
+    display: none;
+  }
 }
 
 .logo a {
@@ -144,22 +167,15 @@ a, a:visited, a:hover {
 }
 
 .logo a h2 {
-  font-family: "ns", sans-serif;
+  font-family: "gt", sans-serif;
   letter-spacing: .5px;
   color: #f5f5f5;
   padding-top: 5px;
   font-size: 20px;
 }
 
-.logo:hover {
-  background-color: #15638e;
-}
-
-.logo:hover a h2 {
-  color: #fd267d;
-}
-
 .nav-link a {
+  border-left: 1px solid #22222229;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -184,10 +200,12 @@ a, a:visited, a:hover {
 }
 
 .nav-link a .svg__icon {
-  height: 40px;
+  height: 30px;
 }
 
 .nav-link a .svg__icon--js.active {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   -webkit-transform: rotateZ(180deg);
           transform: rotateZ(180deg);
 }
@@ -214,9 +232,9 @@ a, a:visited, a:hover {
   position: absolute;
   z-index: 11;
   width: 100%;
+  overflow: hidden;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  background-color: #fd267d;
   display: none;
 }
 
@@ -227,7 +245,6 @@ a, a:visited, a:hover {
 }
 
 .products-wrap .products-wrap-box .products-wrap-box__item a {
-  background-color: #fd267d;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -242,12 +259,26 @@ a, a:visited, a:hover {
   display: flex;
 }
 
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .products-wrap .products-wrap-box.active {
+    border-top: 1px solid #22222229;
+  }
+}
+
 .products-wrap .products-wrap-box.active .products-wrap-box__item a {
-  background-color: #15638e;
+  background-color: #fd267d;
+  color: #f2f2f2;
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .products-wrap .products-wrap-box.active .products-wrap-box__item a {
+    background-color: #15638e;
+  }
 }
 
 .products-wrap .products-wrap-box.active .products-wrap-box__item a:hover {
-  background-color: #fd267d;
+  background-color: #15638e;
+  color: #f2f2f2;
 }
 
 .products-wrap.nav-link.active a {
@@ -261,6 +292,13 @@ a, a:visited, a:hover {
   -ms-grid-column: 4;
   -ms-grid-column-span: 2;
   grid-area: about-wrapper;
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .about-wrap {
+    border-top: 1px solid #22222229;
+    border-bottom: 1px solid #22222229;
+  }
 }
 
 .contact-wrap {
@@ -295,6 +333,14 @@ a, a:visited, a:hover {
   }
 }
 
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .banner-wrap .slick-slider div img {
+    min-height: 309px;
+    height: 309px;
+    max-width: 100%;
+  }
+}
+
 .banner-wrap .slick-slider div .slider-text-wrapper {
   top: 0;
   position: absolute;
@@ -304,8 +350,6 @@ a, a:visited, a:hover {
 }
 
 .banner-wrap .slick-slider div .slider-text-wrapper .wrapper {
-  max-width: 1200px;
-  margin: auto;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -316,12 +360,6 @@ a, a:visited, a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1365px) {
-  .banner-wrap .slick-slider div .slider-text-wrapper .wrapper {
-    max-width: 960px;
-  }
 }
 
 .banner-wrap .slick-slider div .slider-text-wrapper .wrapper .slider-text__box {
@@ -338,18 +376,23 @@ a, a:visited, a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 0 0 0 150px;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1365px) {
+@media only screen and (min-width: 120px) and (max-width: 767px) {
   .banner-wrap .slick-slider div .slider-text-wrapper .wrapper .slider-text__box {
-    padding: 0 0 0 150px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0;
+    display: none;
   }
 }
 
 .banner-wrap .slick-slider div .slider-text-wrapper .wrapper .slider-text__box h1,
 .banner-wrap .slick-slider div .slider-text-wrapper .wrapper .slider-text__box h2 {
   padding: 5px;
-  font-family: "ns", "Public Sans", sans-serif;
+  font-family: 'gt', "Public Sans", sans-serif;
   letter-spacing: 1px;
   color: #f2f2f2;
   font-weight: bold;
@@ -358,24 +401,91 @@ a, a:visited, a:hover {
 .banner-wrap .slick-slider div .slider-text-wrapper .wrapper .slider-text__box h1 {
   background-color: #fd267d;
   margin-bottom: 5px;
-  font-size: 80px;
+  font-size: 70px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1365px) {
   .banner-wrap .slick-slider div .slider-text-wrapper .wrapper .slider-text__box h1 {
-    font-size: 70px;
+    font-size: 40px;
+  }
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .banner-wrap .slick-slider div .slider-text-wrapper .wrapper .slider-text__box h1 {
+    font-size: 20px;
   }
 }
 
 .banner-wrap .slick-slider div .slider-text-wrapper .wrapper .slider-text__box h2 {
   background-color: #15638e;
-  text-transform: uppercase;
   font-size: 50px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1365px) {
   .banner-wrap .slick-slider div .slider-text-wrapper .wrapper .slider-text__box h2 {
-    font-size: 40px;
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .banner-wrap .slick-slider div .slider-text-wrapper .wrapper .slider-text__box h2 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .banner-wrap .slick-slider div .slider-text-wrapper .wrapper h1.logo-mobile {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1365px) {
+  .banner-wrap .slick-slider div .slider-text-wrapper .wrapper h1.logo-mobile {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .banner-wrap .slick-slider div .slider-text-wrapper .wrapper h1.logo-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  .banner-wrap .slick-slider div .slider-text-wrapper .wrapper h1.logo-mobile a {
+    padding: 5px;
+    background-color: #222;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .banner-wrap .slick-slider div .slider-text-wrapper .wrapper h1.logo-mobile a img {
+    height: 70px;
+    min-height: auto;
+    width: 150px;
+    margin-bottom: 5px;
+  }
+  .banner-wrap .slick-slider div .slider-text-wrapper .wrapper h1.logo-mobile a h4 {
+    font-size: 20px;
+    color: #f2f2f2;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 }
 
@@ -396,6 +506,12 @@ a, a:visited, a:hover {
   width: auto;
   background-color: #f2f2f2;
   padding: 10px;
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .banner-wrap .slick-slider ul.slick-dots {
+    background-color: transparent;
+  }
 }
 
 .banner-wrap .slick-slider ul.slick-dots li button:before {
@@ -431,15 +547,34 @@ a, a:visited, a:hover {
 
 .banner-wrap .arrow-container .left-nav-custom.slick-arrow,
 .banner-wrap .arrow-container .right-nav-custom.slick-arrow {
-  background-color: #fd267d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 10px;
   cursor: pointer;
   color: #fff;
+  outline: transparent;
 }
 
 .banner-wrap .arrow-container .left-nav-custom.slick-arrow:hover,
 .banner-wrap .arrow-container .right-nav-custom.slick-arrow:hover {
-  background-color: #15638e;
+  color: #15638e;
+  outline: transparent;
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .banner-wrap .arrow-container .left-nav-custom.slick-arrow .svg__icon,
+  .banner-wrap .arrow-container .right-nav-custom.slick-arrow .svg__icon {
+    height: 30px;
+    width: 30px;
+    outline: transparent;
+  }
 }
 
 main.grid-container {
