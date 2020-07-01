@@ -3,14 +3,14 @@ main.main-grid-container {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr auto;
     grid-template-areas: 
-    "logo products-wrapper products-wrapper about-wrapper about-wrapper contact-wrapper contact-wrapper" 
     "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper" 
     "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper" 
     "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper" 
     "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper" 
-    "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper";
+    "banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper banner-wrapper"
+    "logo products-wrapper products-wrapper about-wrapper about-wrapper contact-wrapper contact-wrapper";
     
     @include breakpoint(mobile) {
 
@@ -104,15 +104,23 @@ main.main-grid-container {
 .products-wrap { 
     grid-area: products-wrapper;
     position: relative;
-
+    overflow: hidden;
+   
     .products-wrap-box {
+        transition: all .3s ease-in-out;
         position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
         z-index: 11;
         width: 100%;
         overflow: hidden;
         flex-wrap: wrap;
 
-        display: none;
+        transform: translateX(-100%);
+        display: flex;
 
         .products-wrap-box__item {
             flex: 1;
@@ -127,7 +135,7 @@ main.main-grid-container {
     }
 
     .products-wrap-box.active {
-        display: flex;
+        transform: translateX(0);
 
         @include breakpoint(mobile) {
             border-top: 1px solid #22222229;
@@ -172,32 +180,75 @@ main.main-grid-container {
     }
 
 }
-  
+
 .contact-wrap { 
     grid-area: contact-wrapper; 
 }
-  
+
 .banner-wrap { 
     grid-area: banner-wrapper;
     position: relative;
 
     // slick slider
+    // .slick-slider{ max-width: calc(100vh * #{$aspectRatio});}
+    // $aspectRatio: 5184 / 3456;
+
+    // .slick-slide {
+    //     width: 100%;
+    // }
+
+    .slick-track {
+        // display: flex !important;
+        height: 100%;
+    }
+      
+    // .slick-slide {
+    //     height: auto;
+    // }
+
     .slick-slider {
-        div {
+        // background: yellow;
+        position: relative;
+        height: 100%;
+        
+        .slide {
             position: relative;
             width: 100%;
+
+            background-color: #15638e;
+
+            // top: 0;
+            // position: absolute;
+            // bottom: 0;
+            // left: 0;
+            // right: 0;
+
+            .bg-image {
+                background: #15638e url("/img/singerica-webp.webp") center;
+                background-size: cover;
+                height: 796px;
+                height: calc(100vh - 141px);
+                
+                object-fit: cover;
+
+                @include breakpoint(mobile) {
+                    height: 320px;
+                }
+            }
+
             img {
                 width: 100%;
-                height: 796px;
+                // height: 796px;
+
 
                 @include breakpoint(tablet) {
-                    height: 524px;
+                    // height: 524px;
                 }
 
                 @include breakpoint(mobile) {
-                    min-height: 309px;
-                    height: 309px;
-                    max-width: 100%;
+                    // min-height: 309px;
+                    // height: 309px;
+                    // max-width: 100%;
                 }
             }
 
@@ -209,8 +260,8 @@ main.main-grid-container {
                 right: 0;
                 .wrapper {
                     // for one img slider use
-                    // max-width: 1200px;
-                    // margin: auto;
+                    max-width: 1200px;
+                    margin: auto;
                     height: 100%;
                     display: flex;
                     justify-content: flex-start;
@@ -287,7 +338,7 @@ main.main-grid-container {
                             align-items: center;
                             width: 100%;
                             a {
-                                padding: 5px;
+                                padding: 5px 5px 0 5px;
                                 background-color: #222;
                                 display: flex;
                                 flex-direction: column;
@@ -297,7 +348,6 @@ main.main-grid-container {
                                     height: 70px;
                                     min-height: auto;
                                     width: 150px;
-                                    margin-bottom: 5px;
                                 }
     
                                 h4 {
@@ -305,6 +355,7 @@ main.main-grid-container {
                                     color: #f2f2f2;
                                     letter-spacing: 1px;
                                     text-transform: uppercase;
+                                    margin-bottom: 2px;
                                 }
                             }
                         }
@@ -358,10 +409,9 @@ main.main-grid-container {
         align-items: center;
         padding: 10px;
 
-        // @include breakpoint(mobile) {
-        //     top: 0;
-        //     transform: translateY(0);
-        // }
+        @include breakpoint(mobile) {
+            display: none;
+        }
 
         .left-nav-custom.slick-arrow,
         .right-nav-custom.slick-arrow {

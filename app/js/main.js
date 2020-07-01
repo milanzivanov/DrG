@@ -13,11 +13,12 @@ $(document).ready(function() {
     });
 
     // slick
+
     $('.slick-slider').slick({
         dots: true,
         autoplay: true,
         autoplaySpeed: 10000,
-        slidesToShow: 2,
+        slidesToShow: 1,
         slidesToScroll: 1,
         prevArrow: $(".left-nav-custom"),
         nextArrow: $(".right-nav-custom"),
@@ -25,19 +26,34 @@ $(document).ready(function() {
         useCSS: true,
         lazyLoad: 'progressive',
 
+        setPosition: 'slick',
+
+        responsive: [
+            {
+              breakpoint: 1365,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+              }
+            }
+          ],
         responsive: [
             {
               breakpoint: 767,
               settings: {
-                // dots: false,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                infinite: true,
-                // fade: true
+                infinite: true
               }
             }
           ]
-    });
+    })
+    ////
+    // .on('setPosition', function (event, slick) {
+    //     slick.$slides.css('height', slick.$slideTrack.height() + 'px');
+    // });
+
 
     // css loader 
     if (window.onload = function() {
