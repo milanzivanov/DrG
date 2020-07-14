@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/magnific-popup.css">
-    <!-- <link rel="stylesheet" href="/assets/loader-bar-ping-pong.css"> -->
 
     <link rel="stylesheet" href="/assets/slick.css">
     <link rel="stylesheet" href="/assets/slick-theme.css">
@@ -19,167 +18,116 @@
 </head>
 <body>
 
-    <main class="main-grid-container">
-        <div class="logo">
-            <a href="javascript:;">
-                <img src="./img/drg-logo-2020-pink-optimised.svg" alt="drg logo">
-                <h2 class="element"></h2>
-            </a> 
-        </div>
-        <div class="products-wrap nav-link">
-            <a href="javascript:;" id="products-box-activate">
-                <svg class="svg__icon svg__icon--js">
-                    <use xlink:href="/img/sprites.svg#icon-arrow-down-sign-to-navigate"></use>
-                </svg>
-                <span>Proizvodi</span>
-            </a>
+    <main class="grid-container">
+        <!-- /////////////////// -->
+        <!-- header start -->
+        <header class="header">
+            <div class="wrapper header-container">
 
-            <!-- product wrap box hide -->
-            <div class="products-wrap-box">
-                <div class="products-wrap-box__item">
-                    <a href="#sectionMuskaKolekcija">
-                        M
-                    </a>
-                </div>
-                <div class="products-wrap-box__item">
-                    <a href="#sectionZenskaKolekcija">
-                        Ž
-                    </a>
-                </div>
-                <div class="products-wrap-box__item">
-                    <a href="#sectionDecijaKolekcija">
-                        D
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="about-wrap nav-link">
-            <a href="#sectionAbout">
-                <svg class="svg__icon">
-                    <use xlink:href="/img/sprites.svg#icon-drg-book"></use>
-                </svg>
-                <span>O Nama</span>  
-            </a>
-        </div>
-        <div class="contact-wrap nav-link">
-            <a href="#sectionContact">
-                <svg class="svg__icon">
-                    <use xlink:href="/img/sprites.svg#icon-mail"></use>
-                </svg>
-                <span>Kontakt</span>
-            </a>
-        </div>
-        <div class="banner-wrap">
-            <!-- slick slider start -->
-            <div class="slick-slider">
-                <div class="slide">
-                    <!-- <img src="/img/singerica-webp.webp" alt="1"> -->
-                    <div class="bg-image"></div>
-
-                    <div class="slider-text-wrapper">
-                        <div class="wrapper">
-                            <div class="slider-text__box">
-                                <h1>DrG Proizvodnja</h1>
-                                <h2>Mi pravimo razliku</h2>                    
-                            </div>
-
-                            <!-- mobile logo -->
-                            <h1 class="logo-mobile">
-                                <a href="javascript:;">
-                                    <img src="./img/drg-logo-2020-pink-optimised.svg" alt="drg logo 1">
-                                    <h4>Proizvodnja</h4>
-                                </a> 
-                            </h1>
-
-                        </div>
-                    </div>
+                <div class="header__left">
+                    <img src="./img/drg-logo-2020-pink-optimised.svg" alt="main logo">
                 </div>
 
-                <div class="slide">
-                    <!-- <img src="/img/singerica-webp.webp" alt="2"> -->
-                    <div class="bg-image"></div>
-
-                    <div class="slider-text-wrapper">
-                        <div class="wrapper">
-                            <!-- mobile logo -->
-                            <h1 class="logo-mobile">
-                                <a href="javascript:;">
-                                    <img src="./img/drg-logo-2020-pink-optimised.svg" alt="drg logo">
-                                    <h4>Proizvodnja</h4>
-                                </a> 
-                            </h1>
-                        </div>
-                    </div>
+                <div class="header__right">                   
+                    <!-- nav toggle -->
+                    <button class="nav-tgl" type="button" aria-label="toggle menu">
+                        <!-- this span just for the three dividers in the hamburger button-->
+                        <span aria-hidden="true"></span>
+                    </button>
                 </div>
-
-                <div class="slide">
-                    <!-- <img src="/img/singerica-webp.webp" alt="3"> -->
-                    <div class="bg-image"></div>
-
-                    <div class="slider-text-wrapper">
-                        <div class="wrapper">
-                            <div class="slider-text__box">
-                                <h1>DrG Proizvodnja</h1>
-                                <h2>Mi pravimo razliku</h2>                    
-                            </div>
-
-                            <!-- mobile logo -->
-                            <h1 class="logo-mobile">
-                                <a href="javascript:;">
-                                    <img src="./img/drg-logo-2020-pink-optimised.svg" alt="drg logo">
-                                    <h4>Proizvodnja</h4>
-                                </a> 
-                            </h1>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide">
-                    <!-- <img src="/img/singerica-webp.webp" alt="4"> -->
-                    <div class="bg-image"></div>
-
-                    <div class="slider-text-wrapper">
-                        <div class="wrapper">
-
-                            <!-- mobile logo -->
-                            <h1 class="logo-mobile">
-                                <a href="javascript:;">
-                                    <img src="./img/drg-logo-2020-pink-optimised.svg" alt="drg logo">
-                                    <h4>Proizvodnja</h4>
-                                </a> 
-                            </h1>
-
-                        </div>
-                    </div>
-                </div>
-
 
             </div>
-            
+        </header>
+
+
+        <div class="banner">
+
+            <!-- /////////////////// -->
+            <!-- mobile and desktop menu start -->
+            <nav class="nav">
+                    <ul>
+                        <li class="nav-dropdown nav-dropdown--js">
+                            <a class="nav-active-state--js" href="javascript:;">
+                                <svg class="svg__icon">
+                                    <use xlink:href="/img/sprites.svg#icon-arrow-down-sign-to-navigate"></use>
+                                </svg>
+                                <span>proizvodi</span>
+                            </a>
+
+                            <ul class="nav-dropdown__box">
+                                <li>
+                                    <a href="#sectionMuskaKolekcija">Muška kolekcija</a>
+                                </li>
+                                <li>
+                                    <a href="#sectionZenskaKolekcija">Ženska kolekcija</a>
+                                </li>
+                                <li>
+                                    <a href="#sectionDecijaKolekcija">Dečija kolekcija</a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li>
+                            <a href="#sectionAbout">
+                                <span>O Nama</span>  
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#sectionContact">
+                                <span>Kontakt</span>
+                            </a>
+                        </li>
+                    </ul>
+            </nav>
+
+            <!-- /////////////////// -->
+            <!-- banner text with scroll effect start -->
+            <div class="banner__text">
+                <a href="#sectionContact" class="banner__text-box">
+                    <h1>drg proizvodnja</h1>
+                    <h2>vama na usluzi</h2>
+                </a>
+            </div>
+
+            <!-- /////////////////// -->
+            <!-- slick slider custom arrows start -->
             <div class="arrow-container">
                 <div class="left-nav-custom">
                     <svg class="svg__icon">
-                        <use xlink:href="/img/sprites.svg#icon-arrow-left2"></use>
+                        <use xlink:href="/img/sprites.svg#icon-arrow-down-sign-to-navigate"></use>
                     </svg>
                 </div>
                 <div class="right-nav-custom">
                     <svg class="svg__icon">
-                        <use xlink:href="/img/sprites.svg#icon-arrow-right2"></use>
+                        <use xlink:href="/img/sprites.svg#icon-arrow-down-sign-to-navigate"></use>
                     </svg>
                 </div>
             </div>
         </div>
+
+        <!-- /////////////////// -->
+        <!-- slick slider start -->
+        <div class="slick-slider">
+            <div class="slide">
+                <img src="/img/singerica-webp.webp" alt="1">
+            </div>
+            <div class="slide">
+                <img src="/img/laptop-glasses.jpeg" alt="3">
+            </div>
+            <div class="slide">
+                <img src="/img/singerica-webp.webp" alt="2">
+            </div>
+        </div>
+
     </main>
 
-    <!-- css loader ping pong start -->
-    <!-- <div class="loader loader-bar-ping-pong is-active" data-rounded></div> -->
-
+    <!-- /////////////////// -->
     <!-- btt start-->
     <div class="back-to-top">
         <span>Nazad na vrh</span>
     </div>
 
+    <!-- /////////////////// -->
     <!-- muska kolekcija start -->
     <section class="section-container products-wrapper">
 
@@ -446,6 +394,7 @@
         </div>
     </section>
 
+    <!-- /////////////////// -->
     <!-- zenska kolekcija start -->
     <section class="section-container products-wrapper">
 
@@ -775,6 +724,7 @@
 
     </section>
 
+    <!-- /////////////////// -->
     <!-- decija kolekcija start -->
     <section class="section-container products-wrapper">
 
@@ -922,7 +872,7 @@
 
     </section>
 
-
+    <!-- /////////////////// -->
     <!-- o nama i kontakt  start --> 
     <section class="about-contact-wrapper">
         <div class="about-contact-item">
@@ -936,6 +886,7 @@
         </div>
     </section>
 
+    <!-- /////////////////// -->
     <!-- footer start -->
     <footer class="footer-wrapper flex flex-jc-c flex-ai-c">
         <small>
@@ -957,7 +908,7 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script> -->
     <script
         src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="

@@ -9,28 +9,28 @@ html {
 
 *, *::before, *::after {
     box-sizing: inherit;
-}
-
-body * {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: "ns", "Public Sans", sans-serif;
     font-size: 1.125rem; // 18px / 16px === 1.125rem
     line-height: 1.3;
-    margin: 0;
-    padding: 0;
     color: #000;
-    overflow-y: scroll;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-    min-height: 100%;
     position: relative;
-    transition: all 0.3s ease
 }
 
+// layout
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+ul, li {
+    list-style: none;
+}
 
 h1,h2,h3,h4,h5,h6 {
     margin: 0;

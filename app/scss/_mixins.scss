@@ -2,16 +2,24 @@
 ----------------------------------------------------------------------- */
 
 @mixin breakpoint ($point) {
-    @if $point == 'mobile' {
-        @media only screen and (min-width: 120px) and (max-width : 767px) { @content; }
+    @if $point == 'm' {
+        @media only screen and (min-width: 320px) and (max-width : 480px) { @content; }
     }
 
-    @else if $point == 'tablet' {
-        @media only screen and (min-width: 768px) and (max-width : 1365px) { @content; }
+    @else if $point == 't' {
+        @media only screen and (min-width: 481px) and (max-width : 768px) { @content; }
     }
 
-    @else if $point == 'desktop' {
-        @media only screen and (min-width: 1366px) { @content; }
+    @else if $point == 'd' {
+        @media only screen and (min-width: 769px) and (max-width : 1024px) { @content; }
+    }
+
+    @else if $point == 'l' {
+        @media only screen and (min-width: 1025px) and (max-width : 1366px) { @content; }
+    }
+
+    @else if $point == 'ls' {
+        @media only screen and (min-width: 1367px) { @content; }
     }
 
     @else {

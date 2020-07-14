@@ -1,21 +1,28 @@
 // https://github.com/mattboldt/typed.js/
-var typed = new Typed('.element', {
-    strings: ["Proizvodnja"],
-    typeSpeed: 100
+// var typed = new Typed('.element', {
+//     strings: ["Saradjujte sa nama"],
+//     typeSpeed: 100
+// });
+
+const nav = document.querySelector('.nav');
+const btn = document.querySelector('.nav-tgl');
+btn.addEventListener('click', evt => {
+    btn.classList.toggle('active');
+    nav.classList.toggle('active');
 });
 
 $(document).ready(function() {
     'use strict';
 
     // open menu
-    $("#products-box-activate").on("click", function(e) {
-        $(".products-wrap-box, .products-wrap, .svg__icon--js").toggleClass("active");
+    $(".nav-dropdown--js").on("click", function(e) {
+        $(".nav-dropdown__box, .nav-active-state--js").toggleClass("active");
     });
 
     // slick
-
     $('.slick-slider').slick({
         dots: true,
+        fade: true,
         autoplay: true,
         autoplaySpeed: 10000,
         slidesToShow: 1,
@@ -25,8 +32,6 @@ $(document).ready(function() {
         cssEase: 'ease-out',
         useCSS: true,
         lazyLoad: 'progressive',
-
-        setPosition: 'slick',
 
         responsive: [
             {
@@ -49,28 +54,14 @@ $(document).ready(function() {
             }
           ]
     })
-    ////
-    // .on('setPosition', function (event, slick) {
-    //     slick.$slides.css('height', slick.$slideTrack.height() + 'px');
-    // });
-
-
-    // css loader 
-    if (window.onload = function() {
-        $(".loader").fadeOut(500, (function() {
-            $(".is-active").remove()
-        }));
-    });
 
     // Magnific popup
     $('.magnific-popup-link').magnificPopup({
         type: 'image',
-        // other options
         gallery: {
             enabled: true
         },
         image: {
-            // options for image content type
             titleSrc: 'title'
           }
       });
@@ -88,7 +79,7 @@ $(document).ready(function() {
         });
 
         // remove active class
-        $(".products-wrap-box, .products-wrap, .svg__icon--js").removeClass("active");
+        $(".nav-dropdown__box, .nav-active-state--js").removeClass("active");
     
         return false;
     });
@@ -114,5 +105,16 @@ $(document).ready(function() {
                 scrollTop: 0
             }, 500);
         });
+    }
+});
+
+// add remove class on scroll
+$(window).scroll(function() {    
+    let scroll = $(window).scrollTop();
+
+    if (scroll >= 50) {
+        $(".banner__text-box").addClass("open");
+    } else {
+        $(".banner__text-box").removeClass("open");
     }
 });
