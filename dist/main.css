@@ -113,7 +113,13 @@ a, a:visited, a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 10;
+  z-index: 13;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .header {
+    padding: 0 5px;
+  }
 }
 
 .header-container {
@@ -262,6 +268,12 @@ main.grid-container::after {
   height: 100vh;
 }
 
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .slick-dotted.slick-slider {
+    margin-bottom: 0;
+  }
+}
+
 ul.slick-dots {
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -318,6 +330,12 @@ ul.slick-dots li.slick-active button:before {
           align-items: center;
   padding: 10px;
   z-index: 9;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .arrow-container {
+    padding: 0;
+  }
 }
 
 .arrow-container .left-nav-custom.slick-arrow,
@@ -401,14 +419,98 @@ ul.slick-dots li.slick-active button:before {
   width: 100%;
 }
 
+.banner__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.banner__text .banner__text-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  background-color: rgba(253, 40, 126, 0.7);
+  height: 100vh;
+  width: 50vw;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.banner__text .banner__text-box:hover {
+  background-color: rgba(19, 100, 151, 0.5);
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .banner__text .banner__text-box {
+    height: 50vh;
+    width: 90vw;
+  }
+}
+
+.banner__text .banner__text-box h1 {
+  color: #fff;
+  font-size: 80px;
+  text-transform: uppercase;
+  border-bottom: 5px solid #fff;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .banner__text .banner__text-box h1 {
+    font-size: 21px;
+    padding-bottom: 10px;
+  }
+}
+
+.banner__text .banner__text-box h2 {
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 30px;
+  padding-top: 10px;
+  text-transform: lowercase;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .banner__text .banner__text-box h2 {
+    font-size: 21px;
+  }
+}
+
+@media only screen and (min-width: l) {
+  .banner__text .banner__text-box {
+    height: 130vh;
+    width: 65vw;
+  }
+}
+
+.banner__text-box.open {
+  background-color: rgba(19, 100, 151, 0.5);
+  width: 1000vw;
+  height: 1000vh;
+}
+
 nav.nav {
-  position: absolute;
   display: none;
-  z-index: 12;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: absolute;
   background: #e8538f;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -416,6 +518,11 @@ nav.nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 12;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 nav.nav ul {
@@ -432,7 +539,12 @@ nav.nav ul {
       -ms-flex-pack: center;
           justify-content: center;
   width: 50vw;
-  background-color: blueviolet;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  nav.nav ul {
+    width: 100%;
+  }
 }
 
 nav.nav ul li {
@@ -448,7 +560,6 @@ nav.nav ul li {
 }
 
 nav.nav ul li a {
-  width: 100%;
   font-family: "Public Sans", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -460,16 +571,23 @@ nav.nav ul li a {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 25px;
-  color: #222;
+  color: #fff;
   font-size: 37px;
-  font-weight: inherit;
+  font-weight: bold;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  nav.nav ul li a {
+    width: 100%;
+    font-size: 21px;
+  }
+}
+
 nav.nav ul li a .svg__icon {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
 }
 
 nav.nav ul li a span {
@@ -562,81 +680,6 @@ nav.nav.active {
   display: flex;
 }
 
-.banner__text {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-}
-
-.banner__text .banner__text-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 10px;
-  background-color: rgba(253, 40, 126, 0.7);
-  height: 100vh;
-  width: 50vw;
-  border-radius: 50%;
-  cursor: pointer;
-  -webkit-transition: 0.4s ease-in-out;
-  transition: 0.4s ease-in-out;
-}
-
-.banner__text .banner__text-box:hover {
-  background-color: rgba(19, 100, 151, 0.5);
-}
-
-.banner__text .banner__text-box h1 {
-  color: #fff;
-  font-size: 80px;
-  text-transform: uppercase;
-  border-bottom: 5px solid #fff;
-}
-
-@media only screen and (min-width: 1025px) and (max-width: 1366px) {
-  .banner__text .banner__text-box h1 {
-    font-size: 60px;
-  }
-}
-
-.banner__text .banner__text-box h2 {
-  color: #fff;
-  letter-spacing: 1px;
-  font-size: 30px;
-  padding-top: 10px;
-  text-transform: capitalize;
-}
-
-@media only screen and (min-width: 1025px) and (max-width: 1366px) {
-  .banner__text .banner__text-box {
-    height: 130vh;
-    width: 65vw;
-  }
-}
-
-.banner__text-box.open {
-  background-color: rgba(19, 100, 151, 0.5);
-  width: 1000vw;
-  height: 1000vh;
-}
-
 .products-wrapper {
   background-color: #fff;
 }
@@ -672,13 +715,13 @@ nav.nav.active {
   padding: 30px 0;
 }
 
-@media only screen and (min-width: tablet) {
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
   .section-container .products-title h2 {
     font-size: 1.3em;
   }
 }
 
-@media only screen and (min-width: mobile) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
   .section-container .products-title h2 {
     font-size: 1em;
   }
@@ -719,6 +762,23 @@ nav.nav.active {
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .section-container .products-container .products-item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 calc(33.3333% - 20px);
+            flex: 1 1 calc(33.3333% - 20px);
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .section-container .products-container .products-item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 calc(100% - 20px);
+            flex: 1 1 calc(100% - 20px);
+    margin: 5px 5px 0 5px;
+  }
 }
 
 .section-container .products-container .products-item .products-item__text {
@@ -796,13 +856,13 @@ nav.nav.active {
   padding-right: 10px;
 }
 
-@media only screen and (min-width: tablet) {
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
   .section-container .products-container .products-item .products-item__text .container-item__btn h4 {
     font-size: 1em;
   }
 }
 
-@media only screen and (min-width: mobile) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
   .section-container .products-container .products-item .products-item__text .container-item__btn h4 {
     font-size: .8em;
   }
@@ -817,23 +877,6 @@ nav.nav.active {
   color: #f5f5f5;
 }
 
-@media only screen and (min-width: tablet) {
-  .section-container .products-container .products-item {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 calc(33.3333% - 20px);
-            flex: 1 1 calc(33.3333% - 20px);
-  }
-}
-
-@media only screen and (min-width: mobile) {
-  .section-container .products-container .products-item {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 calc(100% - 20px);
-            flex: 1 1 calc(100% - 20px);
-    margin: 5px 5px 0 5px;
-  }
-}
-
 .section-container .products-container .products-item:nth-child(4n + 1) {
   margin-left: 5px;
 }
@@ -844,13 +887,13 @@ nav.nav.active {
   height: auto;
 }
 
-@media only screen and (min-width: tablet) {
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
   .section-container .products-container .products-item img {
     height: auto;
   }
 }
 
-@media only screen and (min-width: mobile) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
   .section-container .products-container .products-item img {
     height: auto;
   }
@@ -881,7 +924,7 @@ nav.nav.active {
           align-items: center;
 }
 
-@media only screen and (min-width: mobile) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
   .about-contact-wrapper .about-contact-item {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
@@ -932,7 +975,7 @@ nav.nav.active {
   font-size: 40px;
 }
 
-@media only screen and (min-width: mobile) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
   .about-contact-wrapper .about-contact-item:nth-child(2) a {
     font-size: 25px;
   }
@@ -959,7 +1002,7 @@ footer.footer-wrapper {
   padding: 50px 0;
 }
 
-@media only screen and (min-width: mobile) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
   footer.footer-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -971,7 +1014,7 @@ footer.footer-wrapper {
   }
 }
 
-@media only screen and (min-width: mobile) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
   footer.footer-wrapper small {
     margin-bottom: 10px;
     text-align: center;
@@ -987,7 +1030,7 @@ footer.footer-wrapper small span {
   display: flex;
 }
 
-@media only screen and (min-width: mobile) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
   footer.footer-wrapper small span {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

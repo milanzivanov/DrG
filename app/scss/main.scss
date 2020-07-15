@@ -32,6 +32,7 @@ main.grid-container {
         }
 }
 
+////////////////////
 // slick slider
 .slick-slider {
     position: absolute;
@@ -50,6 +51,13 @@ main.grid-container {
     }
 }
 
+@include breakpoint(m) {
+    .slick-dotted.slick-slider {
+        margin-bottom: 0;
+    }
+}
+
+////////////////////
 // slick active 
 ul.slick-dots {
     left: 50%;
@@ -84,6 +92,7 @@ ul.slick-dots {
         
 }
 
+///////////////////////
 // slick custom arrows
 .arrow-container {
     position: absolute;
@@ -95,6 +104,10 @@ ul.slick-dots {
     align-items: center;
     padding: 10px;
     z-index: 9;
+
+    @include breakpoint(m) {
+        padding: 0;
+    }
 
     .left-nav-custom.slick-arrow,
     .right-nav-custom.slick-arrow {
@@ -129,6 +142,7 @@ ul.slick-dots {
     }
 }
 
+/////////////////
 // btt
 .back-to-top {
     position: fixed;
@@ -150,7 +164,10 @@ ul.slick-dots {
     cursor: pointer;
     display: flex;
 }
-  
+
+
+/////////////////////////////////
+// banner box with scroll effect
 .banner { 
     grid-area: banner;
     display: flex;
@@ -160,20 +177,92 @@ ul.slick-dots {
     width: 100%;
 }
 
+.banner__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+    .banner__text-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-// nav
+        padding: 10px;
+        background-color: rgba(253, 40, 126, 0.7);
+        // background-color: rgba(130, 128, 130, 0.5);
+        height: 100vh;
+        width: 50vw;
+        border-radius: 50%;
+
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
+        // text-shadow: 1px 1px 1px #fff;
+
+        &:hover {
+            background-color: rgba(19, 100, 151, 0.5);
+            // border-radius: 0;
+        }
+
+        @include breakpoint(m) {
+            height: 50vh;
+            width: 90vw;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 80px;
+            text-transform: uppercase;
+            border-bottom: 5px solid #fff;
+
+            @include breakpoint(m) {
+                font-size: 21px;
+                padding-bottom: 10px;
+            }
+        }
+        h2 {
+            color: #fff;
+            letter-spacing: 1px;
+            font-size: 30px;
+            padding-top: 10px;
+            text-transform: lowercase;
+
+            @include breakpoint(m) {
+                font-size: 21px;
+            }
+        }
+
+        @include breakpoint(l) {
+            height: 130vh;
+            width: 65vw;
+        }
+    }
+
+}
+
+/////////////////////////////// 
+// add remove class on scroll js
+.banner__text-box.open {
+    background-color: rgba(19, 100, 151, 0.5);
+    width: 1000vw;
+    height: 1000vh;
+}
+
+////////////////
+// nav menu 
 nav.nav {
-    position: absolute;
     display: none;
     // display: flex;
+    position: absolute;
+    background: #e8538f;
+    justify-content: center;
+    align-items: center;
     z-index: 12;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background: #e8538f;
-    justify-content: center;
-    align-items: center;
 
     ul {
         position: relative;
@@ -182,27 +271,37 @@ nav.nav {
         flex-direction: column;
         justify-content: center;
         width: 50vw;
-        background-color: blueviolet;
+
+        @include breakpoint(m) {
+            width: 100%;
+        }
+
         li {
             display: flex;
             align-items: center;
             justify-content: center;
 
             a {
-                width: 100%;
+                // width: 100%;
                 font-family: "Public Sans", sans-serif;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 padding: 25px;
-                color: #222;
+                color: #fff;
                 font-size: 37px;
-                font-weight: inherit;
+                // font-weight: inherit;
+                font-weight: bold;
                 transition: all 0.3s ease-in-out;
+
+                @include breakpoint(m) {
+                    width: 100%;
+                    font-size: 21px;
+                }
                 
                 .svg__icon {
-                    width: 20px;
-                    height: 20px;
+                    width: 30px;
+                    height: 30px;
                 }
                 
                 span {
@@ -288,118 +387,7 @@ nav.nav.active {
     display: flex;
 }
 
-
-// for the nav background (styling the nav itself is not our topic)
-// .nav:before {
-//     display: block;
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     content: '';
-//     width: 100vw;
-//     height: 100vh;
-//     background: rgba(0, 0, 0, 0.8);
-//     transition: all 500ms ease-in-out;
-      
-//     // that's all the pen about
-//     clip-path: circle(30px at calc(100% - 65px) 65px);
-//     // for AT
-//     visibility: hidden;
-// }
-  
-// // when it gits activated
-// .nav.active {
-
-//     display: flex;
-//     position: relative;
-//     z-index: 11;
-//     color: white;
-//     justify-content: center;
-//     align-items: center;
-//     width: 100%;
-//     height: 100%;
-//     background: #2d9c9c;
-//     padding: 0;
-//     margin: 0;
-
-//     ul {
-//         display: flex;
-//     }
-
-// }
-
-// .nav.active:before {
-//     visibility: visible;
-
-//     // that's all the pen about
-//     clip-path: circle(100%);
-// }
-
-
-///
-.banner__text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    
-    .banner__text-box {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        padding: 10px;
-        background-color: rgba(253, 40, 126, 0.7);
-        // background-color: rgba(130, 128, 130, 0.5);
-        height: 100vh;
-        width: 50vw;
-        border-radius: 50%;
-
-        cursor: pointer;
-        transition: 0.4s ease-in-out;
-        // text-shadow: 1px 1px 1px #fff;
-
-        &:hover {
-            background-color: rgba(19, 100, 151, 0.5);
-            // border-radius: 0;
-        }
-
-        h1 {
-            color: #fff;
-            font-size: 80px;
-            text-transform: uppercase;
-            border-bottom: 5px solid #fff;
-
-            @include breakpoint(l) {
-                font-size: 60px;
-            }
-        }
-        h2 {
-            color: #fff;
-            letter-spacing: 1px;
-            font-size: 30px;
-            padding-top: 10px;
-            text-transform: capitalize;
-        }
-
-        @include breakpoint(l) {
-            height: 130vh;
-            width: 65vw;
-        }
-    }
-
-}
-
-// add reove class on scroll
-.banner__text-box.open {
-    background-color: rgba(19, 100, 151, 0.5);
-    // border-radius: 0;
-    width: 1000vw;
-    height: 1000vh;
-}
-
-
+//////////////////
 // sections
 .products-wrapper {
     background-color: #fff;
@@ -427,11 +415,11 @@ nav.nav.active {
             text-align: center;
             padding: 30px 0;
 
-            @include breakpoint(tablet) {
+            @include breakpoint(t) {
                 font-size: 1.3em
             }
     
-            @include breakpoint(mobile) {
+            @include breakpoint(m) {
                 font-size: 1em
             }
         }
@@ -465,6 +453,14 @@ nav.nav.active {
             flex-direction: column;
             position: relative;
 
+            
+            @include breakpoint(t) {
+                flex: 1 1 calc(33.3333% - 20px);
+            }
+            @include breakpoint(m) {
+                flex: 1 1 calc(100% - 20px);
+                margin: 5px 5px 0 5px;
+            }
 
             .products-item__text {
                 flex-direction: column;
@@ -521,11 +517,11 @@ nav.nav.active {
                         font-size: 1.3em;
                         padding-right: 10px;
     
-                        @include breakpoint(tablet) {
+                        @include breakpoint(t) {
                             font-size: 1em;
                         }
     
-                        @include breakpoint(mobile) {
+                        @include breakpoint(m) {
                             font-size: .8em
                         }
                     }
@@ -543,13 +539,6 @@ nav.nav.active {
                 
             }
 
-            @include breakpoint(tablet) {
-                flex: 1 1 calc(33.3333% - 20px);
-            }
-            @include breakpoint(mobile) {
-                flex: 1 1 calc(100% - 20px);
-                margin: 5px 5px 0 5px;
-            }
 
             &:nth-child(4n + 1) {
                 margin-left: 5px;
@@ -559,14 +548,15 @@ nav.nav.active {
                 // ******** fixing
                 height: 500px;
                 width: 100%;
-
-                @include breakpoint(tablet) {
-                    height: auto;
-                }
-                @include breakpoint(mobile) {
-                    height: auto;
-                }
                 height: auto;
+
+                @include breakpoint(t) {
+                    height: auto;
+                }
+                @include breakpoint(m) {
+                    height: auto;
+                }
+
             }
 
         }
@@ -583,7 +573,7 @@ nav.nav.active {
     .about-contact-item {
         flex: 1 1 50%;
 
-        @include breakpoint(mobile) {
+        @include breakpoint(m) {
             flex: 1 1 100%;
         }
 
@@ -623,7 +613,7 @@ nav.nav.active {
                 color: #f5f5f5;
                 font-size: 40px;
 
-                @include breakpoint(mobile) {
+                @include breakpoint(m) {
                     font-size: 25px;
                 }
 
@@ -636,7 +626,8 @@ nav.nav.active {
     }
 }
 
-
+//////////////////
+// footer
 footer.footer-wrapper {
     display: flex;
     justify-content: space-around;
@@ -645,13 +636,13 @@ footer.footer-wrapper {
     background-color: #f5f5f5;
     padding: 50px 0;
 
-    @include breakpoint(mobile) {
+    @include breakpoint(m) {
         flex-direction: column;
         justify-content: center;
     }
 
     small {
-        @include breakpoint(mobile) {
+        @include breakpoint(m) {
             margin-bottom: 10px;
             text-align: center;
         }
@@ -661,7 +652,7 @@ footer.footer-wrapper {
             color: #222;
             display: flex;
 
-            @include breakpoint(mobile) {
+            @include breakpoint(m) {
                 flex-direction: column;
             }
 

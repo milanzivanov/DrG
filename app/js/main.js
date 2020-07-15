@@ -79,7 +79,7 @@ $(document).ready(function() {
         });
 
         // remove active class
-        $(".nav-dropdown__box, .nav-active-state--js").removeClass("active");
+        $(".nav-dropdown__box, .nav-active-state--js, .nav, .nav-tgl").removeClass("active");
     
         return false;
     });
