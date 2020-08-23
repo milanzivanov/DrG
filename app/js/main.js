@@ -19,41 +19,129 @@ $(document).ready(function() {
         $(".nav-dropdown__box, .nav-active-state--js").toggleClass("active");
     });
 
-    // slick
-    $('.slick-slider').slick({
+    // slick 1
+    $('.slick-slider1').slick({
         dots: true,
-        fade: true,
-        autoplay: true,
-        autoplaySpeed: 10000,
-        slidesToShow: 1,
+        infinite: true,
+        prevArrow: $(".left-nav-custom1__left"),
+        nextArrow: $(".right-nav-custom1__right"),
+        // arrows: true,
+        slidesToShow: 4,
         slidesToScroll: 1,
-        prevArrow: $(".left-nav-custom"),
-        nextArrow: $(".right-nav-custom"),
-        cssEase: 'ease-out',
-        useCSS: true,
-        lazyLoad: 'progressive',
+        lazyLoad: 'ondemand',
 
         responsive: [
             {
-              breakpoint: 1365,
+              breakpoint: 1024,
               settings: {
-                slidesToShow: 1,
+                slidesToShow: 3,
                 slidesToScroll: 1,
                 infinite: true,
+                dots: true
               }
-            }
-          ],
-        responsive: [
+            },
             {
-              breakpoint: 767,
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+              }
+            },
+            {
+              breakpoint: 480,
               settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                infinite: true
+                dots: false
               }
             }
-          ]
-    })
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
+
+    // slick 2
+    $('.slick-slider2').slick({
+        infinite: true,
+        dots: true,
+        prevArrow: $(".left-nav-custom2__left"),
+        nextArrow: $(".right-nav-custom2__right"),
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        lazyLoad: 'ondemand',
+
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                doys: false
+              }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
+
+    // slick 3
+    $('.slick-slider3').slick({
+        infinite: true,
+        dots: true,
+        prevArrow: $(".left-nav-custom3__left"),
+        nextArrow: $(".right-nav-custom3__right"),
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        lazyLoad: 'ondemand',
+
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: false
+              }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
 
     // Magnific popup
     $('.magnific-popup-link').magnificPopup({
@@ -79,7 +167,7 @@ $(document).ready(function() {
         });
 
         // remove active class
-        $(".nav-dropdown__box, .nav-active-state--js, .nav, .nav-tgl").removeClass("active");
+        $(".nav, .nav-tgl").removeClass("active");
     
         return false;
     });

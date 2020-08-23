@@ -1,13 +1,10 @@
 .header {
     position: relative;
-    grid-area: header;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    padding: 10px 0;
     z-index: 13;
-
 
     @include breakpoint(m) {
         padding: 0 5px;
@@ -28,8 +25,8 @@
     background-color: #222;
     padding: 5px;
     img {
-        height: 50px;
-        max-width: 100px;
+        max-width: 120px;
+        height: 60px;
     }
 }
 
@@ -38,10 +35,10 @@
     .nav-tgl {
         display: inline-block;
         cursor: pointer;
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
         border: none;
-        border-radius: 50%;
+        // border-radius: 50%;
         padding: 0;
         background-color: #fff;
         // box-shadow: 0px 4px 24px rgba(#000, 0.24);

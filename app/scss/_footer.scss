@@ -1,0 +1,52 @@
+//////////////////
+// footer
+footer.footer-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse;
+    background-color: #222;
+    padding: 50px 0;
+
+    @include breakpoint(m) {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    small {
+        @include breakpoint(m) {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        span {
+            margin: 0;
+            padding: 10px 0;
+            color: #fff;
+            display: flex;
+
+            @include breakpoint(m) {
+                flex-direction: column;
+            }
+
+            a {
+                margin-left: 5px;
+                color: #fd267d;
+            }
+        }
+    }
+    a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 100px;
+        }
+        span {
+            font-weight: bold;
+            font-size: 15px;
+            text-transform: uppercase;
+            color: #fd267d;
+        }
+    }
+}
