@@ -26,7 +26,7 @@ $(document).ready(function() {
         prevArrow: $(".left-nav-custom1__left"),
         nextArrow: $(".right-nav-custom1__right"),
         // arrows: true,
-        slidesToShow: 4,
+        slidesToShow: 3,
         slidesToScroll: 1,
         lazyLoad: 'ondemand',
 
@@ -34,7 +34,7 @@ $(document).ready(function() {
             {
               breakpoint: 1024,
               settings: {
-                slidesToShow: 3,
+                slidesToShow: 2,
                 slidesToScroll: 1,
                 infinite: true,
                 dots: true
@@ -67,7 +67,7 @@ $(document).ready(function() {
         dots: true,
         prevArrow: $(".left-nav-custom2__left"),
         nextArrow: $(".right-nav-custom2__right"),
-        slidesToShow: 4,
+        slidesToShow: 3,
         slidesToScroll: 1,
         lazyLoad: 'ondemand',
 
@@ -75,7 +75,7 @@ $(document).ready(function() {
             {
               breakpoint: 1024,
               settings: {
-                slidesToShow: 3,
+                slidesToShow: 2,
                 slidesToScroll: 1,
                 infinite: true,
                 dots: true
@@ -93,7 +93,7 @@ $(document).ready(function() {
               settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                doys: false
+                dots: false
               }
             }
             // You can unslick at a given breakpoint now by adding:
@@ -108,7 +108,7 @@ $(document).ready(function() {
         dots: true,
         prevArrow: $(".left-nav-custom3__left"),
         nextArrow: $(".right-nav-custom3__right"),
-        slidesToShow: 4,
+        slidesToShow: 3,
         slidesToScroll: 1,
         lazyLoad: 'ondemand',
 
@@ -116,7 +116,7 @@ $(document).ready(function() {
             {
               breakpoint: 1024,
               settings: {
-                slidesToShow: 3,
+                slidesToShow: 2,
                 slidesToScroll: 1,
                 infinite: true,
                 dots: true
@@ -126,7 +126,8 @@ $(document).ready(function() {
               breakpoint: 600,
               settings: {
                 slidesToShow: 2,
-                slidesToScroll: 1
+                slidesToScroll: 1,
+                dots: false
               }
             },
             {
